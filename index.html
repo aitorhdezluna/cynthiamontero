@@ -1,851 +1,308 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cynthia Montero | Psicología Sanitaria en Tenerife</title>
-    <meta name="description" content="Consulta de psicología con base científica en Santa Cruz de Tenerife y San Isidro. Terapia presencial y online adaptada a tus necesidades. Nº Col. T-04139.">
-    <style>
-        /* --- ESTILOS BASE Y VARIABLES --- */
-        :root {
-            --bg-color: #fbfaf8;
-            --text-color: #222222;
-            --text-muted: #666666;
-            --accent-color: #4a5d4e; /* Verde oliva apagado / premium */
-            --accent-hover: #364439;
-            --border-color: #e5e2dd;
-            --max-width: 1100px;
-            --font-serif: 'Cormorant Garamond', 'Didot', 'Georgia', serif;
-            --font-sans: 'Inter', '-apple-system', BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: var(--font-sans);
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            font-size: 16px;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            object-fit: cover;
-        }
-
-        /* --- CONTENEDORES --- */
-        .container {
-            width: 100%;
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        .section-padding {
-            padding: 100px 0;
-        }
-
-        @media (max-width: 768px) {
-            .section-padding {
-                padding: 60px 0;
-            }
-        }
-
-        /* --- TIPOGRAFÍA --- */
-        h1, h2, h3 {
-            font-family: var(--font-serif);
-            font-weight: 400;
-            line-height: 1.2;
-            letter-spacing: -0.01em;
-        }
-
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 24px;
-        }
-
-        h2 {
-            font-size: 2.2rem;
-            margin-bottom: 40px;
-            position: relative;
-        }
-
-        h3 {
-            font-size: 1.5rem;
-            margin-bottom: 16px;
-        }
-
-        p {
-            color: var(--text-muted);
-            margin-bottom: 20px;
-            font-size: 1.05rem;
-        }
-
-        @media (max-width: 768px) {
-            h1 { font-size: 2.2rem; }
-            h2 { font-size: 1.8rem; }
-        }
-
-        /* --- BOTONES / CTA --- */
-        .btn {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: #ffffff;
-            padding: 14px 32px;
-            font-size: 0.95rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            font-weight: 500;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-
-        .btn:hover {
-            background-color: var(--accent-hover);
-        }
-
-        .btn:active {
-            transform: scale(0.98);
-        }
-
-        /* --- NAVEGACIÓN --- */
-        header {
-            padding: 20px 0;
-            border-bottom: 1px solid var(--border-color);
-            background-color: rgba(251, 250, 248, 0.8);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            backdrop-filter: blur(10px);
-        }
-
-        .nav-wrapper {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: var(--font-serif);
-            font-size: 1.5rem;
-            letter-spacing: 0.05em;
-        }
-
-        .logo span {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            display: block;
-            letter-spacing: 0.2em;
-            color: var(--text-muted);
-            margin-top: 2px;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 32px;
-        }
-
-        .nav-item a {
-            font-size: 0.9rem;
-            font-weight: 500;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            color: var(--text-muted);
-        }
-
-        .nav-item a:hover {
-            color: var(--accent-color);
-        }
-
-        @media (max-width: 768px) {
-            .nav-menu {
-                gap: 16px;
-            }
-            .nav-item a {
-                font-size: 0.8rem;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .nav-wrapper {
-                flex-direction: column;
-                gap: 16px;
-                text-align: center;
-            }
-        }
-
-        /* --- ANIMACIONES NATIVAS --- */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* --- HERO SECTION --- */
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .hero-text {
-            padding-right: 20px;
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-
-        .hero-badge {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: var(--accent-color);
-            margin-bottom: 16px;
-            font-weight: 600;
-        }
-
-        .hero-img-wrapper {
-            position: relative;
-            animation: fadeInUp 1s ease-out forwards;
-        }
-
-        .hero-img {
-            width: 100%;
-            height: 550px;
-            object-fit: cover;
-            filter: grayscale(15%);
-        }
-
-        @media (max-width: 768px) {
-            .hero-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            .hero-text {
-                padding-right: 0;
-                order: 2;
-            }
-            .hero-img-wrapper {
-                order: 1;
-            }
-            .hero-img {
-                height: 380px;
-            }
-        }
-
-        /* --- SECCIÓN PROPUESTA DE VALOR --- */
-        .bg-white {
-            background-color: #ffffff;
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .intro-max-width {
-            max-width: 750px;
-        }
-
-        .intro-text-large {
-            font-family: var(--font-serif);
-            font-size: 1.6rem;
-            color: var(--text-color);
-            line-height: 1.4;
-            margin-bottom: 30px;
-        }
-
-        /* --- SECCIÓN ESPECIALIDADES (GRID) --- */
-        .specialties-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-        }
-
-        .specialty-card {
-            background-color: #ffffff;
-            padding: 40px;
-            border: 1px solid var(--border-color);
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
-        }
-
-        .specialty-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 16px 36px rgba(0,0,0,0.04);
-        }
-
-        .specialty-card svg {
-            width: 32px;
-            height: 32px;
-            margin-bottom: 16px;
-            color: var(--accent-color);
-            display: block;
-            transition: color 0.3s ease;
-        }
-
-        .specialty-card:hover svg {
-            color: var(--accent-hover);
-        }
-
-        .specialty-card h3 {
-            color: var(--accent-color);
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 12px;
-        }
-
-        .specialty-list {
-            list-style: none;
-        }
-
-        .specialty-list li {
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 10px;
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        .specialty-list li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: var(--accent-color);
-            font-size: 1.2rem;
-            top: -2px;
-        }
-
-        @media (max-width: 768px) {
-            .specialties-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            .specialty-card {
-                padding: 30px;
-            }
-        }
-
-        /* --- SECCIÓN SOBRE MÍ --- */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .about-img {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-            filter: grayscale(15%);
-        }
-
-        @media (max-width: 768px) {
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            .about-img {
-                height: 350px;
-            }
-        }
-
-        /* --- SECCIÓN TRAYECTORIA --- */
-        .cv-list {
-            list-style: none;
-            max-width: 800px;
-        }
-
-        .cv-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 20px 0;
-            border-bottom: 1px solid var(--border-color);
-            align-items: center;
-        }
-
-        .cv-item:last-child {
-            border-bottom: none;
-        }
-
-        .cv-title {
-            font-size: 1.1rem;
-            color: var(--text-color);
-            font-weight: 500;
-        }
-
-        .cv-institution {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        @media (max-width: 600px) {
-            .cv-item {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 4px;
-            }
-        }
-
-        /* --- SECCIÓN UBICACIONES / CONTACTO --- */
-        .contact-section-dark {
-            background-color: var(--accent-color);
-            color: #ffffff;
-        }
-
-        .contact-section-dark h2 {
-            color: #ffffff;
-        }
-
-        .contact-section-dark p {
-            color: #e5e2dd;
-        }
-
-        .contact-section-dark .hero-badge {
-            color: #e5e2dd;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-            margin-bottom: 60px;
-        }
-
-        .location-card-dark {
-            background-color: rgba(255, 255, 255, 0.06);
-            padding: 40px;
-            border: 1px solid rgba(229, 226, 221, 0.2);
-        }
-
-        .location-card-dark h3 {
-            font-family: var(--font-sans);
-            font-weight: 600;
-            font-size: 1.2rem;
-            margin-bottom: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: #ffffff;
-        }
-
-        .contact-methods {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            margin-top: 40px;
-            padding-top: 30px;
-            border-top: 1px solid rgba(229, 226, 221, 0.2);
-        }
-
-        .contact-link-dark {
-            font-size: 1.2rem;
-            font-family: var(--font-serif);
-            color: #ffffff;
-        }
-
-        .contact-link-dark:hover {
-            color: #e5e2dd;
-        }
-
-        @media (max-width: 768px) {
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-        }
-
-        /* --- FOOTER Y TEXTOS LEGALES --- */
-        footer {
-            background-color: #ffffff;
-            padding: 40px 0;
-            border-top: 1px solid var(--border-color);
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            text-align: center;
-        }
-
-        .footer-legal-links {
-            margin-top: 15px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            font-size: 0.8rem;
-        }
-
-        .footer-legal-links a {
-            color: var(--text-muted);
-            text-decoration: underline;
-        }
-
-        .footer-legal-links a:hover {
-            color: var(--accent-color);
-        }
-
-        /* MODALES NATIVOS CON CSS PARA TEXTOS LEGALES */
-        .legal-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 2000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-        }
-
-        .legal-modal:target {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .legal-modal-content {
-            background-color: #ffffff;
-            width: 90%;
-            max-width: 700px;
-            max-height: 80vh;
-            padding: 40px;
-            overflow-y: auto;
-            position: relative;
-            border: 1px solid var(--border-color);
-            text-align: left;
-        }
-
-        .legal-modal-content h3 {
-            color: var(--accent-color);
-            margin-bottom: 20px;
-            font-size: 1.8rem;
-        }
-
-        .legal-modal-content p, .legal-modal-content ul {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-bottom: 16px;
-        }
-
-        .legal-modal-content ul {
-            padding-left: 20px;
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--text-muted);
-            cursor: pointer;
-        }
-
-        .close-modal:hover {
-            color: var(--text-color);
-        }
-
-        /* --- WHATSAPP FLOTANTE --- */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #ffffff;
-            color: var(--text-color);
-            padding: 12px 24px;
-            border-radius: 40px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            letter-spacing: 0.03em;
-            border: 1px solid var(--border-color);
-            z-index: 999;
-        }
-
-        .whatsapp-float:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 24px rgba(0,0,0,0.12);
-            border-color: var(--accent-color);
-        }
-
-        .whatsapp-icon {
-            width: 16px;
-            height: 16px;
-            background-color: #25D366;
-            border-radius: 50%;
-            display: inline-block;
-        }
-    </style>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173f37">
+  <meta name="color-scheme" content="light">
+
+  <title>Cynthia Montero | Psicóloga Sanitaria en Tenerife</title>
+  <meta name="description" content="Psicología sanitaria en Santa Cruz de Tenerife, San Isidro y online. Un espacio clínico cercano, riguroso y adaptado a tu momento. Nº Col. T-04139.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://aitorhdezluna.github.io/cynthiamontero/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="Cynthia Montero | Psicología Sanitaria">
+  <meta property="og:description" content="Acompañamiento psicológico presencial en Tenerife y online, desde una mirada humana y un enfoque científico.">
+  <meta property="og:url" content="https://aitorhdezluna.github.io/cynthiamontero/">
+  <meta property="og:image" content="https://aitorhdezluna.github.io/cynthiamontero/assets/foto_hero.webp">
+  <meta property="og:image:alt" content="Retrato de Cynthia Montero, psicóloga sanitaria">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cynthia Montero | Psicología Sanitaria">
+  <meta name="twitter:description" content="Psicología sanitaria en Santa Cruz de Tenerife, San Isidro y online.">
+  <meta name="twitter:image" content="https://aitorhdezluna.github.io/cynthiamontero/assets/foto_hero.webp">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Psychologist",
+    "name": "Cynthia Montero",
+    "description": "Psicóloga Sanitaria. Atención presencial en Santa Cruz de Tenerife y San Isidro, además de terapia online.",
+    "telephone": "+34668558471",
+    "email": "cynthiamonteropsico@gmail.com",
+    "areaServed": ["Santa Cruz de Tenerife", "San Isidro", "Tenerife"],
+    "image": "https://aitorhdezluna.github.io/cynthiamontero/assets/foto_hero.webp",
+    "url": "https://aitorhdezluna.github.io/cynthiamontero/"
+  }
+  </script>
 </head>
 <body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
-    <!-- NAV / HEADER -->
-    <header>
-        <div class="container nav-wrapper">
-            <a href="#" class="logo">
-                Cynthia Montero
-                <span>Psicología Sanitaria</span>
-            </a>
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="#inicio">Inicio</a></li>
-                <li class="nav-item"><a href="#especialidades">Especialidades</a></li>
-                <li class="nav-item"><a href="#sobre-mi">Sobre Mí</a></li>
-                <li class="nav-item"><a href="#contacto">Contacto</a></li>
-            </ul>
-        </div>
-    </header>
-
-    <!-- HERO SECTION -->
-    <section id="inicio" class="section-padding">
-        <div class="container hero-grid">
-            <div class="hero-text">
-                <div class="hero-badge">Psicología con evidencia científica</div>
-                <h1>Psicología sanitaria en Santa Cruz de Tenerife y San Isidro</h1>
-                <p>Un espacio de acompañamiento ético y riguroso, pensado para esos momentos en los que todo se siente difícil, confuso o cuesta arriba. Aquí encontrarás un lugar seguro donde poder ser tú, sin juicios y a tu propio ritmo.</p>
-                <div style="margin-top: 35px;">
-                    <a href="#contacto" class="btn">Solicitar Primera Sesión</a>
-                </div>
-            </div>
-            <div class="hero-img-wrapper">
-                <img src="foto_hero.webp" alt="Cynthia Montero - Psicóloga Sanitaria" class="hero-img">
-            </div>
-        </div>
-    </section>
-
-    <!-- PROPUESTA DE VALOR / INTRO -->
-    <section class="section-padding bg-white">
-        <div class="container intro-max-width">
-            <div class="hero-badge">El espacio terapéutico</div>
-            <div class="intro-text-large">
-                "Mi labor es crear un espacio donde tus vivencias puedan expresarse con absoluta libertad y respeto profundo por tu historia personal."
-            </div>
-            <p>Quizás estás atravesando un cambio vital, una pérdida, un malestar difícil de nombrar, o tal vez simplemente buscas un lugar donde ser escuchado de verdad. Sea cual sea tu momento actual, aquí hay un lugar para ti.</p>
-            <p>Trabajo desde un enfoque integrador, combinando distintas herramientas clínicas según lo que necesites, construyendo juntas/os un camino más habitable, honesto y saludable.</p>
-        </div>
-    </section>
-
-    <!-- ESPECIALIDADES -->
-    <section id="especialidades" class="section-padding">
-        <div class="container">
-            <div class="hero-badge">Servicios y Especialidades</div>
-            <h2 style="max-width: 600px;">Cómo podemos trabajar en tu bienestar emocional</h2>
-            
-            <div class="specialties-grid">
-                <div class="specialty-card">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
-                    </svg>
-                    <h3>Psicoterapia Individual</h3>
-                    <p style="margin-bottom: 15px; font-size: 0.95rem;">Procesos totalmente adaptados a tu ritmo y realidad clínica.</p>
-                    <ul class="specialty-list">
-                        <li>Terapia individual en adultos</li>
-                        <li>Terapia para el adulto mayor</li>
-                        <li>Terapia infanto-juvenil</li>
-                        <li>Ansiedad y gestión emocional</li>
-                        <li>Autoestima y autoconocimiento</li>
-                    </ul>
-                </div>
-
-                <div class="specialty-card">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
-                    </svg>
-                    <h3>Área Familiar y Mediación</h3>
-                    <p style="margin-bottom: 15px; font-size: 0.95rem;">Resolución de conflictos y fortalecimiento de vínculos afectivos.</p>
-                    <ul class="specialty-list">
-                        <li>Terapia familiar integrada</li>
-                        <li>Mediación Familiar y comunitaria</li>
-                        <li>Acompañamiento en relaciones sanas</li>
-                        <li>Gestión de cambios vitales y soledad</li>
-                    </ul>
-                </div>
-
-                <div class="specialty-card">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18c-2.305 0-4.408.867-6 2.292m0-14.25v14.25" />
-                    </svg>
-                    <h3>Salud Cognitiva</h3>
-                    <p style="margin-bottom: 15px; font-size: 0.95rem;">Intervención y mantenimiento en consulta o en entorno cercano.</p>
-                    <ul class="specialty-list">
-                        <li>Estimulación cognitiva en consulta</li>
-                        <li>Estimulación cognitiva a domicilio</li>
-                        <li>Técnicas de estudio y apoyo académico</li>
-                    </ul>
-                </div>
-
-                <div class="specialty-card">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
-                    </svg>
-                    <h3>Talleres y Grupos</h3>
-                    <p style="margin-bottom: 15px; font-size: 0.95rem;">Espacios compartidos de crecimiento y herramientas prácticas.</p>
-                    <ul class="specialty-list">
-                        <li>Grupos de apoyo y desarrollo personal</li>
-                        <li>Talleres prácticos de autocuidado</li>
-                        <li>Sesiones de sensibilización</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SOBRE MÍ -->
-    <section id="sobre-mi" class="section-padding bg-white">
-        <div class="container about-grid">
-            <div>
-                <img src="foto_sobre_mi.webp" alt="Cynthia Montero en consulta" class="about-img">
-            </div>
-            <div>
-                <div class="hero-badge">Sobre Mí</div>
-                <h2>Una mirada humana, un enfoque científico</h2>
-                <p>Desde siempre me ha movido una idea muy simple: estar ahí para las personas. Acompañarlas cuando todo se vuelve un poco más difícil, cuando las emociones se enredan o cuando simplemente hace falta alguien que escuche de verdad.</p>
-                <p>He tenido el privilegio de trabajar con personas mayores, niños, adolescentes y familias en situaciones muy diversas. Cada experiencia me ha enseñado algo distinto: la importancia de la empatía, del silencio, de respetar los tiempos del otro y, sobre todo, de no perder nunca de vista a la persona que hay detrás de cualquier dificultad.</p>
-                <p>Mi compromiso es ofrecerte un acompañamiento ético, cuidado y auténtico, donde lo más importante seas tú.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- FORMACIÓN / CV -->
-    <section class="section-padding">
-        <div class="container">
-            <div class="hero-badge">Garantía Clínica</div>
-            <h2>Trayectoria y Formación Académica</h2>
-            <p style="max-width: 600px; margin-bottom: 40px;">La práctica psicoterapéutica exige una actualización constante. Mi formación está orientada a ofrecer herramientas científicas consolidadas.</p>
-            
-            <ul class="cv-list">
-                <li class="cv-item">
-                    <span class="cv-title">Grado en Psicología</span>
-                    <span class="cv-institution">Universidad de La Laguna</span>
-                </li>
-                <li class="cv-item">
-                    <span class="cv-title">Máster en Psicología General Sanitaria</span>
-                    <span class="cv-institution">Universidad Europea</span>
-                </li>
-                <li class="cv-item">
-                    <span class="cv-title">Máster en Mediación Familiar y Sociocomunitaria</span>
-                    <span class="cv-institution">Universidad de La Laguna</span>
-                </li>
-                <li class="cv-item">
-                    <span class="cv-title">Formación Especializada en Trauma y EMDR</span>
-                    <span class="cv-institution">UNIR</span>
-                </li>
-                <li class="cv-item">
-                    <span class="cv-title">Terapia de Aceptación y Compromiso (ACT)</span>
-                    <span class="cv-institution">Especialización Clínica</span>
-                </li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- CONTACTO Y SEDES -->
-    <section id="contacto" class="section-padding contact-section-dark">
-        <div class="container">
-            <div class="hero-badge">Ubicaciones y Cita Previa</div>
-            <h2 style="max-width: 600px; margin-bottom: 50px;">Comienza tu proceso terapéutico presencial u online</h2>
-            
-            <div class="contact-grid">
-                <div class="location-card-dark">
-                    <h3>Sede Santa Cruz</h3>
-                    <p>Consulta Presencial en Santa Cruz de Tenerife.</p>
-                    <p style="font-size: 0.9rem; font-style: italic;">Atención en espacio clínico acondicionado.</p>
-                </div>
-
-                <div class="location-card-dark">
-                    <h3>Sede San Isidro</h3>
-                    <p>Consulta Presencial en San Isidro (Granadilla de Abona).</p>
-                    <p style="font-size: 0.9rem; font-style: italic;">Atención cercana para la zona sur de la isla.</p>
-                </div>
-            </div>
-
-            <div style="text-align: center; max-width: 700px; margin: 0 auto;">
-                <p>También se ofrece la modalidad de <strong>Terapia Online</strong> y servicio de <strong>Atención Domiciliaria</strong> (bajo consulta de disponibilidad).</p>
-                
-                <div class="contact-methods">
-                    <a href="tel:+34668558471" class="contact-link-dark">Teléfono: 668 55 84 71</a>
-                    <a href="mailto:cynthiamonteropsico@gmail.com" class="contact-link-dark">Mail: cynthiamonteropsico@gmail.com</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="container">
-            <p>Nº de Colegiada: T-04139 (Colegio Oficial de Psicología de Santa Cruz de Tenerife)</p>
-            <p style="margin-top: 10px; font-size: 0.8rem;">&copy; 2026 Cynthia Montero. Todos los derechos reservados.</p>
-            
-            <!-- ENLACES LEGALES AGREGADOS -->
-            <div class="footer-legal-links">
-                <a href="#aviso-legal">Aviso Legal</a>
-                <a href="#politica-privacidad">Política de Privacidad</a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- SECCIÓN DE VENTANAS MODALES LEGALES (NATIVAS EN CSS) -->
-    
-    <!-- MÓDAL AVISO LEGAL -->
-    <div id="aviso-legal" class="legal-modal">
-        <div class="legal-modal-content">
-            <a href="#" class="close-modal">&times;</a>
-            <h3>Aviso Legal</h3>
-            <p>En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y Comercio Electrónico (LSSI-CE), se exponen los siguientes datos identificativos del titular del sitio web:</p>
-            <ul>
-                <li><strong>Titular:</strong> Cynthia Montero</li>
-                <li><strong>Actividad:</strong> Psicóloga Sanitaria (Colegiada Nº T-04139 por el Colegio Oficial de Psicología de Santa Cruz de Tenerife).</li>
-                <li><strong>Contacto:</strong> cynthiamonteropsico@gmail.com | Tel. 668 55 84 71</li>
-            </ul>
-            <p>El acceso y uso de este sitio web atribuye la condición de usuario, aceptando desde dicho acceso los términos de uso aquí reflejados. El contenido de la web tiene carácter meramente informativo sobre los servicios profesionales de psicología ofrecidos.</p>
-        </div>
-    </div>
-
-    <!-- MÓDAL POLÍTICA DE PRIVACIDAD -->
-    <div id="politica-privacidad" class="legal-modal">
-        <div class="legal-modal-content">
-            <a href="#" class="close-modal">&times;</a>
-            <h3>Política de Privacidad</h3>
-            <p>De conformidad con el Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD), se informa al usuario de cómo se tratan los datos personales facilitados a través de esta web:</p>
-            <p><strong>Responsable del Tratamiento:</strong> Cynthia Montero.</p>
-            <p><strong>Finalidad:</strong> Gestión y respuesta a las solicitudes de información, contacto o cita previa realizadas por los usuarios mediante los canales proporcionados (teléfono, WhatsApp o correo electrónico).</p>
-            <p><strong>Legitimación:</strong> El consentimiento inequívoco del usuario al ponerse en contacto de forma voluntaria.</p>
-            <p><strong>Almacenamiento:</strong> Los datos se tratarán con absoluta confidencialidad amparada bajo el secreto profesional sanitario y no se cederán a terceros salvo obligación legal.</p>
-            <p><strong>Derechos:</strong> El usuario puede ejercer en cualquier momento sus derechos de acceso, rectificación, supresión y limitación escribiendo un correo electrónico a cynthiamonteropsico@gmail.com.</p>
-        </div>
-    </div>
-
-    <!-- BOTÓN WHATSAPP FLOTANTE -->
-    <a href="https://wa.me/34668558471?text=Hola%20Cynthia,%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20para%20una%20consulta." class="whatsapp-float" target="_blank" rel="noopener noreferrer">
-        <span class="whatsapp-icon"></span>
-        Pedir cita por WhatsApp
+  <header class="site-header" data-header>
+    <a class="brand" href="#inicio" aria-label="Cynthia Montero — Inicio">
+      <span class="brand__name">Cynthia Montero</span>
+      <span class="brand__meta">Psicología sanitaria · T-04139</span>
     </a>
 
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" data-menu-toggle>
+      <span>Menú</span>
+      <span class="menu-toggle__line" aria-hidden="true"></span>
+    </button>
+
+    <nav class="site-nav" id="nav-menu" aria-label="Navegación principal" data-nav>
+      <a href="#enfoque">Enfoque</a>
+      <a href="#acompanamiento">Cómo puedo ayudarte</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#cita" class="site-nav__cta">Primera sesión</a>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section class="opening" id="inicio" aria-labelledby="opening-title">
+      <div class="opening__picture reveal reveal--image">
+        <img src="assets/foto_hero.webp" width="750" height="1000" alt="Cynthia Montero, psicóloga sanitaria" fetchpriority="high">
+      </div>
+
+      <div class="opening__copy">
+        <p class="eyebrow reveal">Psicología sanitaria · Tenerife + online</p>
+        <h1 id="opening-title" class="display display--opening reveal">
+          No hace falta<br>
+          <em>poder con todo.</em>
+        </h1>
+        <p class="opening__intro reveal">A veces lo que necesitas no es otra respuesta rápida, sino un lugar donde entender qué te está pasando y empezar a vivirlo de otra manera.</p>
+        <a class="text-link reveal" href="#cita">Quiero empezar por una primera sesión <span aria-hidden="true">↘</span></a>
+      </div>
+
+      <div class="opening__index" aria-hidden="true">
+        <span>01</span>
+        <span>Consulta presencial</span>
+        <span>Santa Cruz · San Isidro</span>
+      </div>
+    </section>
+
+    <section class="manifesto" id="enfoque" aria-labelledby="manifesto-title">
+      <div class="section-number" aria-hidden="true">02 / Un espacio terapéutico</div>
+      <div class="manifesto__body">
+        <h2 id="manifesto-title" class="display display--statement reveal">Tu historia no necesita encajar en una etiqueta para merecer ser escuchada.</h2>
+        <div class="manifesto__notes reveal">
+          <p>Trabajo desde un enfoque integrador y con base científica, ajustando las herramientas clínicas a tu historia, tu ritmo y lo que necesites en cada momento.</p>
+          <p>La terapia puede ser un lugar para ordenar lo que pesa, entender patrones, atravesar un cambio, recuperar recursos o simplemente dejar de sostenerlo todo a solas.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="practice" id="acompanamiento" aria-labelledby="practice-title">
+      <div class="practice__heading">
+        <p class="eyebrow reveal">Cómo puedo acompañarte</p>
+        <h2 id="practice-title" class="display display--section reveal">No trabajo con una lista de problemas.<br><em>Trabajo contigo.</em></h2>
+      </div>
+
+      <div class="practice-list" data-accordion>
+        <article class="practice-item reveal">
+          <button class="practice-item__trigger" type="button" aria-expanded="true">
+            <span class="practice-item__number">01</span>
+            <span class="practice-item__title">Psicoterapia individual</span>
+            <span class="practice-item__symbol" aria-hidden="true">−</span>
+          </button>
+          <div class="practice-item__panel">
+            <div class="practice-item__panel-inner">
+              <p>Procesos para adultos, personas mayores, infancia y adolescencia. Podemos trabajar ansiedad, gestión emocional, autoestima, autoconocimiento y momentos vitales que se han vuelto difíciles de sostener.</p>
+              <p class="practice-item__aside">Presencial · Online</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="practice-item reveal">
+          <button class="practice-item__trigger" type="button" aria-expanded="false">
+            <span class="practice-item__number">02</span>
+            <span class="practice-item__title">Familia, vínculos y mediación</span>
+            <span class="practice-item__symbol" aria-hidden="true">+</span>
+          </button>
+          <div class="practice-item__panel" hidden>
+            <div class="practice-item__panel-inner">
+              <p>Acompañamiento cuando la convivencia se atasca, los vínculos se tensan o una familia necesita nuevas formas de escucharse. Incluye terapia familiar, mediación familiar y comunitaria y apoyo en cambios vitales o situaciones de soledad.</p>
+              <p class="practice-item__aside">Relaciones · Conflicto · Cambio</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="practice-item reveal">
+          <button class="practice-item__trigger" type="button" aria-expanded="false">
+            <span class="practice-item__number">03</span>
+            <span class="practice-item__title">Salud cognitiva</span>
+            <span class="practice-item__symbol" aria-hidden="true">+</span>
+          </button>
+          <div class="practice-item__panel" hidden>
+            <div class="practice-item__panel-inner">
+              <p>Estimulación cognitiva en consulta o a domicilio y apoyo con técnicas de estudio. El objetivo es mantener y entrenar capacidades desde una intervención realista, cercana y adaptada a cada etapa.</p>
+              <p class="practice-item__aside">Consulta · Domicilio</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="practice-item reveal">
+          <button class="practice-item__trigger" type="button" aria-expanded="false">
+            <span class="practice-item__number">04</span>
+            <span class="practice-item__title">Talleres y grupos</span>
+            <span class="practice-item__symbol" aria-hidden="true">+</span>
+          </button>
+          <div class="practice-item__panel" hidden>
+            <div class="practice-item__panel-inner">
+              <p>Grupos de apoyo, desarrollo personal y talleres de autocuidado o sensibilización. Espacios compartidos para aprender herramientas, poner experiencias en común y sentirse acompañado también por otras personas.</p>
+              <p class="practice-item__aside">Grupos · Herramientas prácticas</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="pause" aria-label="Una pausa">
+      <div class="pause__line reveal" aria-hidden="true"></div>
+      <p class="pause__text reveal">“No se trata de convertirte en otra persona. Se trata de poder estar mejor siendo tú.”</p>
+      <p class="pause__signature reveal">— Cynthia</p>
+    </section>
+
+    <section class="about" id="sobre-mi" aria-labelledby="about-title">
+      <div class="about__photo reveal reveal--image">
+        <img src="assets/foto_sobre_mi.webp" width="813" height="1000" loading="lazy" alt="Cynthia Montero en un retrato cercano">
+      </div>
+
+      <div class="about__copy">
+        <p class="eyebrow reveal">Quién estará al otro lado</p>
+        <h2 id="about-title" class="display display--section reveal">Cercanía sin perder el rigor.</h2>
+        <p class="about__lead reveal">Desde siempre me ha movido una idea muy simple: estar ahí para las personas cuando lo cotidiano deja de ser sencillo.</p>
+        <div class="about__text reveal">
+          <p>He trabajado con personas mayores, niños, adolescentes y familias en situaciones muy diversas. Cada experiencia me ha enseñado la importancia de la empatía, del silencio, de respetar los tiempos y de no perder de vista a la persona que hay detrás de cualquier dificultad.</p>
+          <p>Mi compromiso es ofrecerte un acompañamiento ético, cuidado y auténtico, con una práctica clínica que se actualiza y se apoya en herramientas con evidencia.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="credentials" aria-labelledby="credentials-title">
+      <div class="credentials__intro">
+        <p class="section-number" aria-hidden="true">05 / Formación</p>
+        <h2 id="credentials-title" class="display display--credentials reveal">La calidez importa.<br><em>La formación también.</em></h2>
+      </div>
+
+      <ol class="credentials__list">
+        <li class="reveal"><span>Grado en Psicología</span><small>Universidad de La Laguna</small></li>
+        <li class="reveal"><span>Máster en Psicología General Sanitaria</span><small>Universidad Europea</small></li>
+        <li class="reveal"><span>Máster en Mediación Familiar y Sociocomunitaria</span><small>Universidad de La Laguna</small></li>
+        <li class="reveal"><span>Formación especializada en Trauma y EMDR</span><small>UNIR</small></li>
+        <li class="reveal"><span>Terapia de Aceptación y Compromiso (ACT)</span><small>Especialización clínica</small></li>
+      </ol>
+      <p class="credentials__registration reveal">Psicóloga sanitaria · Nº de colegiada T-04139 · Colegio Oficial de Psicología de Santa Cruz de Tenerife</p>
+    </section>
+
+    <section class="process" aria-labelledby="process-title">
+      <p class="eyebrow reveal">La primera sesión</p>
+      <div class="process__layout">
+        <h2 id="process-title" class="display display--process reveal">Empezar terapia también puede dar vértigo.</h2>
+        <div class="process__copy reveal">
+          <p>La primera sesión sirve para conocernos, entender qué te trae a consulta y valorar qué tipo de acompañamiento puede tener sentido para ti. No necesitas llegar sabiendo explicarlo perfectamente.</p>
+          <p class="process__note">Puedes venir con una idea muy clara o simplemente con un “sé que así no quiero seguir”. Es suficiente para empezar.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="locations" aria-labelledby="locations-title">
+      <div class="locations__heading">
+        <p class="eyebrow reveal">Dónde podemos vernos</p>
+        <h2 id="locations-title" class="display display--section reveal">Dos consultas en Tenerife.<br>También online.</h2>
+      </div>
+
+      <div class="locations__list">
+        <article class="location reveal">
+          <span class="location__number">01</span>
+          <div>
+            <h3>Santa Cruz de Tenerife</h3>
+            <p>Consulta presencial en un espacio clínico acondicionado.</p>
+          </div>
+          <span class="location__type">Presencial</span>
+        </article>
+        <article class="location reveal">
+          <span class="location__number">02</span>
+          <div>
+            <h3>San Isidro</h3>
+            <p>Consulta presencial para la zona sur de Tenerife.</p>
+          </div>
+          <span class="location__type">Presencial</span>
+        </article>
+        <article class="location reveal">
+          <span class="location__number">03</span>
+          <div>
+            <h3>Desde donde estés</h3>
+            <p>Terapia online y atención domiciliaria bajo consulta de disponibilidad.</p>
+          </div>
+          <span class="location__type">Online</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta" id="cita" aria-labelledby="cta-title">
+      <div class="cta__micro reveal">Si has llegado hasta aquí, quizá ya llevabas un tiempo pensándolo.</div>
+      <h2 id="cta-title" class="display display--cta reveal">Podemos empezar<br><em>por hablar.</em></h2>
+      <div class="cta__actions reveal">
+        <a class="cta__primary" href="https://wa.me/34668558471?text=Hola%20Cynthia%2C%20me%20gustar%C3%ADa%20pedir%20informaci%C3%B3n%20para%20una%20primera%20sesi%C3%B3n." target="_blank" rel="noopener noreferrer">
+          <span>Pedir una primera sesión</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+        <a class="cta__secondary" href="tel:+34668558471">668 55 84 71</a>
+        <a class="cta__secondary" href="mailto:cynthiamonteropsico@gmail.com">cynthiamonteropsico@gmail.com</a>
+      </div>
+      <p class="cta__availability reveal">Presencial en Santa Cruz y San Isidro · Online · Atención domiciliaria bajo disponibilidad</p>
+    </section>
+  </main>
+
+  <footer class="finale">
+    <div class="finale__brand">
+      <p>Cynthia Montero</p>
+      <span>Psicología sanitaria</span>
+    </div>
+    <div class="finale__meta">
+      <p>T-04139 · Tenerife</p>
+      <p>© <span data-year></span></p>
+    </div>
+    <nav class="finale__legal" aria-label="Información legal">
+      <button type="button" data-dialog-open="legal-dialog">Aviso legal</button>
+      <button type="button" data-dialog-open="privacy-dialog">Privacidad</button>
+    </nav>
+  </footer>
+
+  <dialog class="legal-dialog" id="legal-dialog" aria-labelledby="legal-title">
+    <div class="legal-dialog__top">
+      <h2 id="legal-title">Aviso legal</h2>
+      <button type="button" class="legal-dialog__close" data-dialog-close aria-label="Cerrar aviso legal">Cerrar</button>
+    </div>
+    <div class="legal-dialog__body">
+      <p>En cumplimiento del artículo 10 de la Ley 34/2002, de Servicios de la Sociedad de la Información y Comercio Electrónico (LSSI-CE), se facilitan los datos identificativos del titular de este sitio web.</p>
+      <p><strong>Titular:</strong> Cynthia Montero.<br><strong>Actividad:</strong> Psicóloga Sanitaria, colegiada nº T-04139 por el Colegio Oficial de Psicología de Santa Cruz de Tenerife.<br><strong>Contacto:</strong> cynthiamonteropsico@gmail.com · 668 55 84 71.</p>
+      <p>El contenido de la web tiene carácter informativo sobre los servicios profesionales ofrecidos.</p>
+    </div>
+  </dialog>
+
+  <dialog class="legal-dialog" id="privacy-dialog" aria-labelledby="privacy-title">
+    <div class="legal-dialog__top">
+      <h2 id="privacy-title">Política de privacidad</h2>
+      <button type="button" class="legal-dialog__close" data-dialog-close aria-label="Cerrar política de privacidad">Cerrar</button>
+    </div>
+    <div class="legal-dialog__body">
+      <p>De conformidad con el Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD), Cynthia Montero es responsable del tratamiento de los datos personales facilitados voluntariamente a través de los canales de contacto.</p>
+      <p><strong>Finalidad:</strong> gestionar y responder solicitudes de información o cita previa. <strong>Legitimación:</strong> consentimiento del usuario al iniciar el contacto.</p>
+      <p>Los datos se tratarán con confidencialidad y no se cederán a terceros salvo obligación legal. Puedes ejercer tus derechos de acceso, rectificación, supresión y limitación escribiendo a cynthiamonteropsico@gmail.com.</p>
+    </div>
+  </dialog>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
