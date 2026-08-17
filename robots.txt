@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://aitorhdezluna.github.io/cynthiamontero/sitemap.xml
