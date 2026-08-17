@@ -1,53 +1,20 @@
-# Cynthia Montero — Rediseño web 02
+# Cynthia Montero — refinamiento del index original
 
-Rediseño integral orientado a una dirección de arte digital propia para la consulta de Cynthia Montero.
+Esta versión conserva la arquitectura y el contenido base del index original:
+header, hero, espacio terapéutico, especialidades, sobre mí, formación, contacto, legales y acceso a WhatsApp.
 
-## Concepto
+## Qué se ha mejorado
+- Jerarquía tipográfica y escala editorial.
+- Espaciado y ritmo vertical.
+- Hero más refinado sin cambiar su estructura.
+- Especialidades mantienen la cuadrícula, pero con tratamiento más limpio y menos "card".
+- Mejor integración de las fotografías.
+- Sección "Sobre mí" más elegante.
+- Formación convertida en listado editorial.
+- Contacto más claro y con CTA de mayor presencia.
+- Navegación móvil.
+- Header que se oculta al bajar.
+- Animaciones suaves con IntersectionObserver.
+- Accesibilidad básica y `prefers-reduced-motion`.
 
-**“El espacio entre pensamientos.”**
-
-La identidad abandona la estética habitual de psicología basada en verdes suaves, serif editorial y tarjetas de servicios. La web utiliza una paleta más gráfica —papel, azul ultramar, melocotón, lila y amarillo ácido— con tipografía sans dominante, movimiento orgánico y una línea continua inspirada en el acto de ordenar pensamientos.
-
-La dirección visual toma como aprendizaje —no como copia— el uso expresivo de tipografía, color e interacción de proyectos de psicología reconocidos en Awwwards como Q Psychology y Psychotherapy Warsaw.
-
-## Arquitectura narrativa
-
-1. Apertura: “No tienes que explicarte perfecto para empezar.”
-2. Mirada clínica: precisión + escucha.
-3. Situaciones reconocibles antes de hablar de servicios.
-4. Áreas de acompañamiento como rail editorial interactivo.
-5. Pausa visual orgánica.
-6. Cynthia: cercanía + autoridad.
-7. Formación clínica como statement visual.
-8. Modalidades de consulta.
-9. CTA: “Podemos empezar por hablar.”
-
-## Stack
-
-- HTML semántico
-- CSS vanilla
-- JavaScript vanilla
-- Sin frameworks ni librerías
-- IntersectionObserver
-- Animaciones respetando `prefers-reduced-motion`
-- Dialog nativo para textos legales
-
-## Archivos
-
-- `index.html`
-- `styles.css`
-- `script.js`
-- `favicon.svg`
-- `site.webmanifest`
-- `robots.txt`
-- `sitemap.xml`
-- `assets/foto_hero.webp`
-- `assets/foto_sobre_mi.webp`
-
-## Publicación
-
-La URL canónica actual está configurada como:
-
-`https://aitorhdezluna.github.io/cynthiamontero/`
-
-Si el proyecto se publica en un dominio propio, cambiar canonical, Open Graph, Schema.org, robots.txt y sitemap.xml.
+No se ha planteado un concepto nuevo; es una mejora estética del diseño original.
