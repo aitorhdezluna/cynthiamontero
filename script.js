@@ -1,112 +1,109 @@
 (() => {
-  const header = document.querySelector('[data-header]');
-  const menuToggle = document.querySelector('[data-menu-toggle]');
-  const nav = document.querySelector('[data-nav]');
-  const menuLinks = nav ? nav.querySelectorAll('a') : [];
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const qs = (s, root = document) => root.querySelector(s);
+  const qsa = (s, root = document) => [...root.querySelectorAll(s)];
 
-  let lastY = window.scrollY;
+  const header = qs('[data-header]');
+  let previousY = window.scrollY;
   let ticking = false;
 
   const updateHeader = () => {
     const y = window.scrollY;
-    header?.classList.toggle('is-scrolled', y > 24);
-
-    if (y > 150 && y > lastY + 6 && !document.body.classList.contains('menu-open')) {
-      header?.classList.add('is-hidden');
-    } else if (y < lastY - 6 || y < 80) {
-      header?.classList.remove('is-hidden');
-    }
-
-    lastY = y;
+    header?.classList.toggle('is-scrolled', y > 20);
+    header?.classList.toggle('is-hidden', y > previousY && y > 240 && !document.body.classList.contains('menu-open'));
+    previousY = y;
     ticking = false;
   };
 
   window.addEventListener('scroll', () => {
     if (!ticking) {
-      window.requestAnimationFrame(updateHeader);
+      requestAnimationFrame(updateHeader);
       ticking = true;
     }
   }, { passive: true });
 
+  const menu = qs('[data-menu]');
+  const nav = qs('[data-nav]');
   const setMenu = (open) => {
-    if (!menuToggle || !nav) return;
-    menuToggle.setAttribute('aria-expanded', String(open));
-    nav.classList.toggle('is-open', open);
+    menu?.setAttribute('aria-expanded', String(open));
+    nav?.classList.toggle('is-open', open);
     document.body.classList.toggle('menu-open', open);
-    menuToggle.querySelector('span:first-child').textContent = open ? 'Cerrar' : 'Menú';
+    if (header) header.classList.remove('is-hidden');
   };
 
-  menuToggle?.addEventListener('click', () => {
-    const open = menuToggle.getAttribute('aria-expanded') !== 'true';
-    setMenu(open);
-  });
+  menu?.addEventListener('click', () => setMenu(menu.getAttribute('aria-expanded') !== 'true'));
+  qsa('[data-nav-link]').forEach(link => link.addEventListener('click', () => setMenu(false)));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
 
-  menuLinks.forEach((link) => link.addEventListener('click', () => setMenu(false)));
-
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') setMenu(false);
-  });
-
-  document.querySelectorAll('.practice-item__trigger').forEach((trigger) => {
-    trigger.addEventListener('click', () => {
-      const item = trigger.closest('.practice-item');
-      const panel = item?.querySelector('.practice-item__panel');
-      const symbol = item?.querySelector('.practice-item__symbol');
-      const willOpen = trigger.getAttribute('aria-expanded') !== 'true';
-
-      document.querySelectorAll('.practice-item__trigger').forEach((otherTrigger) => {
-        const otherItem = otherTrigger.closest('.practice-item');
-        const otherPanel = otherItem?.querySelector('.practice-item__panel');
-        const otherSymbol = otherItem?.querySelector('.practice-item__symbol');
-        otherTrigger.setAttribute('aria-expanded', 'false');
-        if (otherPanel) otherPanel.hidden = true;
-        if (otherSymbol) otherSymbol.textContent = '+';
-      });
-
-      if (willOpen && panel) {
-        trigger.setAttribute('aria-expanded', 'true');
-        panel.hidden = false;
-        if (symbol) symbol.textContent = '−';
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
       }
     });
+  }, { threshold: .13, rootMargin: '0px 0px -5% 0px' });
+  qsa('.reveal').forEach(el => revealObserver.observe(el));
+
+  qsa('[data-area]').forEach(area => {
+    const trigger = qs('.area__trigger', area);
+    const content = qs('.area__content', area);
+    trigger?.addEventListener('click', () => {
+      qsa('[data-area]').forEach(other => {
+        const otherTrigger = qs('.area__trigger', other);
+        const otherContent = qs('.area__content', other);
+        const active = other === area;
+        other.classList.toggle('is-active', active);
+        otherTrigger?.setAttribute('aria-expanded', String(active));
+        if (otherContent) otherContent.hidden = !active;
+      });
+    });
   });
 
-  const revealEls = document.querySelectorAll('.reveal');
-  if (reduceMotion || !('IntersectionObserver' in window)) {
-    revealEls.forEach((el) => el.classList.add('is-visible'));
-  } else {
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduceMotion) {
+    qsa('[data-parallax]').forEach(box => {
+      const img = qs('img', box);
+      window.addEventListener('scroll', () => {
+        const rect = box.getBoundingClientRect();
+        if (rect.bottom > 0 && rect.top < innerHeight) {
+          const progress = (innerHeight - rect.top) / (innerHeight + rect.height);
+          const offset = (progress - .5) * 28;
+          if (img) img.style.transform = `translateY(${offset}px) scale(1.05)`;
         }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+      }, { passive: true });
+    });
 
-    revealEls.forEach((el) => revealObserver.observe(el));
+    const orbit = qs('[data-orbit]');
+    if (orbit && matchMedia('(pointer:fine)').matches) {
+      let x = innerWidth / 2, y = innerHeight / 2, tx = x, ty = y;
+      document.addEventListener('mousemove', e => { tx = e.clientX; ty = e.clientY; });
+      const follow = () => {
+        x += (tx - x) * .14;
+        y += (ty - y) * .14;
+        orbit.style.left = `${x}px`;
+        orbit.style.top = `${y}px`;
+        requestAnimationFrame(follow);
+      };
+      follow();
+      qsa('a, button, .mode').forEach(el => {
+        el.addEventListener('mouseenter', () => orbit.classList.add('is-hover'));
+        el.addEventListener('mouseleave', () => orbit.classList.remove('is-hover'));
+      });
+    }
   }
 
-  document.querySelectorAll('[data-dialog-open]').forEach((button) => {
+  qsa('[data-dialog-open]').forEach(button => {
     button.addEventListener('click', () => {
       const dialog = document.getElementById(button.dataset.dialogOpen);
-      dialog?.showModal();
+      if (dialog?.showModal) dialog.showModal();
     });
   });
-
-  document.querySelectorAll('[data-dialog-close]').forEach((button) => {
-    button.addEventListener('click', () => button.closest('dialog')?.close());
-  });
-
-  document.querySelectorAll('dialog').forEach((dialog) => {
-    dialog.addEventListener('click', (event) => {
+  qsa('[data-dialog-close]').forEach(button => button.addEventListener('click', () => button.closest('dialog')?.close()));
+  qsa('dialog').forEach(dialog => {
+    dialog.addEventListener('click', e => {
       const rect = dialog.getBoundingClientRect();
-      const outside = event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom;
-      if (outside) dialog.close();
+      const inside = e.clientX >= rect.left && e.clientX <= rect.right && e.clientY >= rect.top && e.clientY <= rect.bottom;
+      if (!inside) dialog.close();
     });
   });
-
-  const year = document.querySelector('[data-year]');
-  if (year) year.textContent = new Date().getFullYear();
 })();

@@ -3,32 +3,32 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#173f37">
+  <meta name="theme-color" content="#F3EFE7">
   <meta name="color-scheme" content="light">
 
   <title>Cynthia Montero | Psicóloga Sanitaria en Tenerife</title>
-  <meta name="description" content="Psicología sanitaria en Santa Cruz de Tenerife, San Isidro y online. Un espacio clínico cercano, riguroso y adaptado a tu momento. Nº Col. T-04139.">
+  <meta name="description" content="Psicología sanitaria en Santa Cruz de Tenerife, San Isidro y online. Acompañamiento psicológico cercano, riguroso y adaptado a tu momento. Nº Col. T-04139.">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <link rel="canonical" href="https://aitorhdezluna.github.io/cynthiamontero/">
 
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_ES">
   <meta property="og:title" content="Cynthia Montero | Psicología Sanitaria">
-  <meta property="og:description" content="Acompañamiento psicológico presencial en Tenerife y online, desde una mirada humana y un enfoque científico.">
+  <meta property="og:description" content="Un espacio para entender lo que te pasa sin tener que explicarte perfecto.">
   <meta property="og:url" content="https://aitorhdezluna.github.io/cynthiamontero/">
   <meta property="og:image" content="https://aitorhdezluna.github.io/cynthiamontero/assets/foto_hero.webp">
-  <meta property="og:image:alt" content="Retrato de Cynthia Montero, psicóloga sanitaria">
+  <meta property="og:image:alt" content="Cynthia Montero, psicóloga sanitaria">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Cynthia Montero | Psicología Sanitaria">
-  <meta name="twitter:description" content="Psicología sanitaria en Santa Cruz de Tenerife, San Isidro y online.">
+  <meta name="twitter:description" content="Psicología sanitaria en Tenerife y online.">
   <meta name="twitter:image" content="https://aitorhdezluna.github.io/cynthiamontero/assets/foto_hero.webp">
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 
   <script type="application/ld+json">
@@ -46,153 +46,200 @@
   </script>
 </head>
 <body>
-  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
 
-  <header class="site-header" data-header>
-    <a class="brand" href="#inicio" aria-label="Cynthia Montero — Inicio">
-      <span class="brand__name">Cynthia Montero</span>
-      <span class="brand__meta">Psicología sanitaria · T-04139</span>
+  <div class="cursor-orbit" aria-hidden="true" data-orbit></div>
+
+  <header class="header" data-header>
+    <a href="#inicio" class="wordmark" aria-label="Cynthia Montero, inicio">
+      <span>Cynthia</span><span>Montero</span>
     </a>
 
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" data-menu-toggle>
-      <span>Menú</span>
-      <span class="menu-toggle__line" aria-hidden="true"></span>
+    <div class="header__meta">
+      <span>Psicología sanitaria</span>
+      <span class="header__dot" aria-hidden="true"></span>
+      <span>Tenerife · Online</span>
+    </div>
+
+    <button class="menu" type="button" aria-expanded="false" aria-controls="site-menu" data-menu>
+      <span class="menu__label">Menú</span>
+      <span class="menu__glyph" aria-hidden="true"><i></i><i></i></span>
     </button>
 
-    <nav class="site-nav" id="nav-menu" aria-label="Navegación principal" data-nav>
-      <a href="#enfoque">Enfoque</a>
-      <a href="#acompanamiento">Cómo puedo ayudarte</a>
-      <a href="#sobre-mi">Sobre mí</a>
-      <a href="#cita" class="site-nav__cta">Primera sesión</a>
+    <nav class="overlay-nav" id="site-menu" aria-label="Navegación principal" data-nav>
+      <div class="overlay-nav__top">
+        <span>Explorar</span>
+        <span>Nº Col. T-04139</span>
+      </div>
+      <div class="overlay-nav__links">
+        <a href="#mirada" data-nav-link><small>01</small><span>La mirada</span></a>
+        <a href="#acompanamiento" data-nav-link><small>02</small><span>Acompañamiento</span></a>
+        <a href="#cynthia" data-nav-link><small>03</small><span>Cynthia</span></a>
+        <a href="#cita" data-nav-link><small>04</small><span>Primera sesión</span></a>
+      </div>
+      <div class="overlay-nav__foot">
+        <a href="tel:+34668558471">668 55 84 71</a>
+        <a href="mailto:cynthiamonteropsico@gmail.com">cynthiamonteropsico@gmail.com</a>
+      </div>
     </nav>
   </header>
 
-  <main id="contenido">
-    <section class="opening" id="inicio" aria-labelledby="opening-title">
-      <div class="opening__picture reveal reveal--image">
-        <img src="assets/foto_hero.webp" width="750" height="1000" alt="Cynthia Montero, psicóloga sanitaria" fetchpriority="high">
+  <main id="main">
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="hero__canvas" aria-hidden="true">
+        <svg class="mindlines" viewBox="0 0 900 900" role="presentation" data-mindlines>
+          <path d="M450 82C273 82 130 225 130 402c0 162 120 296 276 317 189 26 364-121 364-316 0-166-134-301-300-301-151 0-274 122-274 273 0 136 110 246 246 246 122 0 221-99 221-221 0-108-88-196-196-196-95 0-172 77-172 172 0 82 66 148 148 148 69 0 125-56 125-125 0-56-45-101-101-101-43 0-78 35-78 78 0 30 24 54 54 54"/>
+        </svg>
+        <div class="hero__pulse"></div>
       </div>
 
-      <div class="opening__copy">
-        <p class="eyebrow reveal">Psicología sanitaria · Tenerife + online</p>
-        <h1 id="opening-title" class="display display--opening reveal">
-          No hace falta<br>
-          <em>poder con todo.</em>
-        </h1>
-        <p class="opening__intro reveal">A veces lo que necesitas no es otra respuesta rápida, sino un lugar donde entender qué te está pasando y empezar a vivirlo de otra manera.</p>
-        <a class="text-link reveal" href="#cita">Quiero empezar por una primera sesión <span aria-hidden="true">↘</span></a>
+      <div class="hero__kicker reveal">
+        <span>Psicología sanitaria</span>
+        <span>Santa Cruz · San Isidro · Online</span>
       </div>
 
-      <div class="opening__index" aria-hidden="true">
-        <span>01</span>
-        <span>Consulta presencial</span>
-        <span>Santa Cruz · San Isidro</span>
+      <div class="hero__statement">
+        <h1 id="hero-title" class="reveal">No tienes que<br><span>explicarte perfecto</span><br>para empezar.</h1>
+        <p class="hero__intro reveal">Hay momentos en los que no sabes exactamente qué ocurre; solo sabes que algo pesa. La terapia puede empezar justo ahí.</p>
+      </div>
+
+      <figure class="hero__portrait reveal" data-parallax>
+        <img src="assets/foto_hero.webp" alt="Retrato de Cynthia Montero, psicóloga sanitaria" width="1500" height="1997" fetchpriority="high">
+        <figcaption>
+          <span>Cynthia Montero</span>
+          <span>Psicóloga General Sanitaria · T-04139</span>
+        </figcaption>
+      </figure>
+
+      <a class="hero__cta magnetic" href="#cita">
+        <span>Empezar una conversación</span>
+        <span class="arrow" aria-hidden="true">↘</span>
+      </a>
+
+      <div class="hero__scroll" aria-hidden="true"><span>Desliza</span><i></i></div>
+    </section>
+
+    <section class="thesis" id="mirada" aria-labelledby="thesis-title">
+      <div class="thesis__aside reveal">
+        <span class="label">01 / La mirada</span>
+        <p>Un proceso terapéutico no consiste en aplicar una fórmula. Consiste en comprender qué está ocurriendo, contigo delante.</p>
+      </div>
+
+      <div class="thesis__main">
+        <h2 id="thesis-title" class="reveal">La escucha también<br>es una forma de <em>precisión.</em></h2>
+        <p class="thesis__body reveal">Trabajo desde un enfoque integrador y con base científica. Eso significa elegir herramientas clínicas según tu historia, tu momento y tus necesidades; no intentar que tú encajes en una técnica.</p>
+      </div>
+
+      <div class="thesis__stamp reveal" aria-hidden="true">
+        <svg viewBox="0 0 120 120">
+          <defs><path id="circlePath" d="M60,60 m-42,0 a42,42 0 1,1 84,0 a42,42 0 1,1 -84,0"/></defs>
+          <text><textPath href="#circlePath">ESPACIO · ESCUCHA · RIGOR · CUIDADO · </textPath></text>
+          <circle cx="60" cy="60" r="4"/>
+        </svg>
       </div>
     </section>
 
-    <section class="manifesto" id="enfoque" aria-labelledby="manifesto-title">
-      <div class="section-number" aria-hidden="true">02 / Un espacio terapéutico</div>
-      <div class="manifesto__body">
-        <h2 id="manifesto-title" class="display display--statement reveal">Tu historia no necesita encajar en una etiqueta para merecer ser escuchada.</h2>
-        <div class="manifesto__notes reveal">
-          <p>Trabajo desde un enfoque integrador y con base científica, ajustando las herramientas clínicas a tu historia, tu ritmo y lo que necesites en cada momento.</p>
-          <p>La terapia puede ser un lugar para ordenar lo que pesa, entender patrones, atravesar un cambio, recuperar recursos o simplemente dejar de sostenerlo todo a solas.</p>
+    <section class="situations" aria-labelledby="situations-title">
+      <div class="situations__head reveal">
+        <span class="label">A veces empieza así</span>
+        <h2 id="situations-title">No hace falta tener un diagnóstico para notar que necesitas parar.</h2>
+      </div>
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker__track">
+          <span>“Estoy agotado de darle vueltas”</span><i></i><span>“No sé ponerle nombre”</span><i></i><span>“Todo me supera un poco”</span><i></i><span>“Necesito entender qué me pasa”</span><i></i><span>“Estoy agotado de darle vueltas”</span><i></i><span>“No sé ponerle nombre”</span><i></i>
         </div>
       </div>
+      <div class="situations__foot reveal">
+        <p>Ansiedad, autoestima, pérdidas, cambios vitales, relaciones, soledad, regulación emocional o simplemente una sensación persistente de no estar bien.</p>
+        <span>Puede ser suficiente para pedir ayuda.</span>
+      </div>
     </section>
 
-    <section class="practice" id="acompanamiento" aria-labelledby="practice-title">
-      <div class="practice__heading">
-        <p class="eyebrow reveal">Cómo puedo acompañarte</p>
-        <h2 id="practice-title" class="display display--section reveal">No trabajo con una lista de problemas.<br><em>Trabajo contigo.</em></h2>
+    <section class="areas" id="acompanamiento" aria-labelledby="areas-title">
+      <div class="areas__intro">
+        <span class="label reveal">02 / Acompañamiento</span>
+        <h2 id="areas-title" class="reveal">Distintos momentos.<br>Una misma atención.</h2>
       </div>
 
-      <div class="practice-list" data-accordion>
-        <article class="practice-item reveal">
-          <button class="practice-item__trigger" type="button" aria-expanded="true">
-            <span class="practice-item__number">01</span>
-            <span class="practice-item__title">Psicoterapia individual</span>
-            <span class="practice-item__symbol" aria-hidden="true">−</span>
+      <div class="areas__rail" data-areas>
+        <article class="area is-active" data-area>
+          <button type="button" class="area__trigger" aria-expanded="true">
+            <span class="area__num">01</span>
+            <span class="area__title">Psicoterapia individual</span>
           </button>
-          <div class="practice-item__panel">
-            <div class="practice-item__panel-inner">
-              <p>Procesos para adultos, personas mayores, infancia y adolescencia. Podemos trabajar ansiedad, gestión emocional, autoestima, autoconocimiento y momentos vitales que se han vuelto difíciles de sostener.</p>
-              <p class="practice-item__aside">Presencial · Online</p>
-            </div>
+          <div class="area__content">
+            <p>Procesos con adultos, personas mayores, niños y adolescentes. Un espacio para trabajar ansiedad, gestión emocional, autoestima, autoconocimiento y situaciones vitales difíciles.</p>
+            <span>Presencial · Online</span>
           </div>
         </article>
 
-        <article class="practice-item reveal">
-          <button class="practice-item__trigger" type="button" aria-expanded="false">
-            <span class="practice-item__number">02</span>
-            <span class="practice-item__title">Familia, vínculos y mediación</span>
-            <span class="practice-item__symbol" aria-hidden="true">+</span>
+        <article class="area" data-area>
+          <button type="button" class="area__trigger" aria-expanded="false">
+            <span class="area__num">02</span>
+            <span class="area__title">Familia y mediación</span>
           </button>
-          <div class="practice-item__panel" hidden>
-            <div class="practice-item__panel-inner">
-              <p>Acompañamiento cuando la convivencia se atasca, los vínculos se tensan o una familia necesita nuevas formas de escucharse. Incluye terapia familiar, mediación familiar y comunitaria y apoyo en cambios vitales o situaciones de soledad.</p>
-              <p class="practice-item__aside">Relaciones · Conflicto · Cambio</p>
-            </div>
+          <div class="area__content" hidden>
+            <p>Terapia familiar, mediación familiar y comunitaria y acompañamiento cuando la convivencia, los vínculos o los cambios necesitan nuevas formas de abordarse.</p>
+            <span>Vínculos · Conflicto · Cambio</span>
           </div>
         </article>
 
-        <article class="practice-item reveal">
-          <button class="practice-item__trigger" type="button" aria-expanded="false">
-            <span class="practice-item__number">03</span>
-            <span class="practice-item__title">Salud cognitiva</span>
-            <span class="practice-item__symbol" aria-hidden="true">+</span>
+        <article class="area" data-area>
+          <button type="button" class="area__trigger" aria-expanded="false">
+            <span class="area__num">03</span>
+            <span class="area__title">Salud cognitiva</span>
           </button>
-          <div class="practice-item__panel" hidden>
-            <div class="practice-item__panel-inner">
-              <p>Estimulación cognitiva en consulta o a domicilio y apoyo con técnicas de estudio. El objetivo es mantener y entrenar capacidades desde una intervención realista, cercana y adaptada a cada etapa.</p>
-              <p class="practice-item__aside">Consulta · Domicilio</p>
-            </div>
+          <div class="area__content" hidden>
+            <p>Estimulación cognitiva en consulta o a domicilio y técnicas de estudio, con intervenciones ajustadas a la etapa vital y a las capacidades de cada persona.</p>
+            <span>Consulta · Domicilio</span>
           </div>
         </article>
 
-        <article class="practice-item reveal">
-          <button class="practice-item__trigger" type="button" aria-expanded="false">
-            <span class="practice-item__number">04</span>
-            <span class="practice-item__title">Talleres y grupos</span>
-            <span class="practice-item__symbol" aria-hidden="true">+</span>
+        <article class="area" data-area>
+          <button type="button" class="area__trigger" aria-expanded="false">
+            <span class="area__num">04</span>
+            <span class="area__title">Talleres y grupos</span>
           </button>
-          <div class="practice-item__panel" hidden>
-            <div class="practice-item__panel-inner">
-              <p>Grupos de apoyo, desarrollo personal y talleres de autocuidado o sensibilización. Espacios compartidos para aprender herramientas, poner experiencias en común y sentirse acompañado también por otras personas.</p>
-              <p class="practice-item__aside">Grupos · Herramientas prácticas</p>
-            </div>
+          <div class="area__content" hidden>
+            <p>Grupos de apoyo, desarrollo personal, autocuidado y sensibilización: espacios para compartir, aprender herramientas y construir recursos junto a otras personas.</p>
+            <span>Grupo · Herramientas · Comunidad</span>
           </div>
         </article>
       </div>
     </section>
 
-    <section class="pause" aria-label="Una pausa">
-      <div class="pause__line reveal" aria-hidden="true"></div>
-      <p class="pause__text reveal">“No se trata de convertirte en otra persona. Se trata de poder estar mejor siendo tú.”</p>
-      <p class="pause__signature reveal">— Cynthia</p>
+    <section class="breath" aria-label="Pausa visual">
+      <div class="breath__orb" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="breath__copy reveal">
+        <span class="label">Una pausa</span>
+        <p>Hay cosas que se entienden mejor cuando dejan de hacerse ruido unas encima de otras.</p>
+      </div>
     </section>
 
-    <section class="about" id="sobre-mi" aria-labelledby="about-title">
-      <div class="about__photo reveal reveal--image">
-        <img src="assets/foto_sobre_mi.webp" width="813" height="1000" loading="lazy" alt="Cynthia Montero en un retrato cercano">
+    <section class="portrait-story" id="cynthia" aria-labelledby="cynthia-title">
+      <div class="portrait-story__image" data-parallax>
+        <img src="assets/foto_sobre_mi.webp" alt="Cynthia Montero en consulta" width="1096" height="1348" loading="lazy">
       </div>
 
-      <div class="about__copy">
-        <p class="eyebrow reveal">Quién estará al otro lado</p>
-        <h2 id="about-title" class="display display--section reveal">Cercanía sin perder el rigor.</h2>
-        <p class="about__lead reveal">Desde siempre me ha movido una idea muy simple: estar ahí para las personas cuando lo cotidiano deja de ser sencillo.</p>
-        <div class="about__text reveal">
-          <p>He trabajado con personas mayores, niños, adolescentes y familias en situaciones muy diversas. Cada experiencia me ha enseñado la importancia de la empatía, del silencio, de respetar los tiempos y de no perder de vista a la persona que hay detrás de cualquier dificultad.</p>
-          <p>Mi compromiso es ofrecerte un acompañamiento ético, cuidado y auténtico, con una práctica clínica que se actualiza y se apoya en herramientas con evidencia.</p>
+      <div class="portrait-story__content">
+        <span class="label reveal">03 / Cynthia</span>
+        <h2 id="cynthia-title" class="reveal">Profesionalidad sin distancia.</h2>
+        <p class="portrait-story__lead reveal">“Mi compromiso es que puedas encontrar un lugar seguro, pero también un proceso con dirección.”</p>
+        <div class="portrait-story__columns reveal">
+          <p>He trabajado con personas mayores, infancia, adolescencia y familias en contextos muy distintos. Esa diversidad me ha enseñado algo esencial: escuchar bien implica no dar por hecho quién tienes delante.</p>
+          <p>Mi forma de trabajar combina rigor clínico, respeto por los tiempos y una relación terapéutica cercana. Sin juicios, sin recetas universales y sin convertir cada dificultad en una etiqueta.</p>
         </div>
       </div>
     </section>
 
     <section class="credentials" aria-labelledby="credentials-title">
-      <div class="credentials__intro">
-        <p class="section-number" aria-hidden="true">05 / Formación</p>
-        <h2 id="credentials-title" class="display display--credentials reveal">La calidez importa.<br><em>La formación también.</em></h2>
+      <div class="credentials__top reveal">
+        <span class="label">Formación clínica</span>
+        <p>Nº de colegiada T-04139 · Colegio Oficial de Psicología de Santa Cruz de Tenerife</p>
       </div>
+      <h2 id="credentials-title" class="credentials__title reveal">Cercanía,<br><span>con fundamento.</span></h2>
 
       <ol class="credentials__list">
         <li class="reveal"><span>Grado en Psicología</span><small>Universidad de La Laguna</small></li>
@@ -201,105 +248,90 @@
         <li class="reveal"><span>Formación especializada en Trauma y EMDR</span><small>UNIR</small></li>
         <li class="reveal"><span>Terapia de Aceptación y Compromiso (ACT)</span><small>Especialización clínica</small></li>
       </ol>
-      <p class="credentials__registration reveal">Psicóloga sanitaria · Nº de colegiada T-04139 · Colegio Oficial de Psicología de Santa Cruz de Tenerife</p>
     </section>
 
-    <section class="process" aria-labelledby="process-title">
-      <p class="eyebrow reveal">La primera sesión</p>
-      <div class="process__layout">
-        <h2 id="process-title" class="display display--process reveal">Empezar terapia también puede dar vértigo.</h2>
-        <div class="process__copy reveal">
-          <p>La primera sesión sirve para conocernos, entender qué te trae a consulta y valorar qué tipo de acompañamiento puede tener sentido para ti. No necesitas llegar sabiendo explicarlo perfectamente.</p>
-          <p class="process__note">Puedes venir con una idea muy clara o simplemente con un “sé que así no quiero seguir”. Es suficiente para empezar.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="locations" aria-labelledby="locations-title">
-      <div class="locations__heading">
-        <p class="eyebrow reveal">Dónde podemos vernos</p>
-        <h2 id="locations-title" class="display display--section reveal">Dos consultas en Tenerife.<br>También online.</h2>
+    <section class="format" aria-labelledby="format-title">
+      <div class="format__intro reveal">
+        <span class="label">Dónde podemos vernos</span>
+        <h2 id="format-title">La terapia tiene que caber en tu vida.</h2>
       </div>
 
-      <div class="locations__list">
-        <article class="location reveal">
-          <span class="location__number">01</span>
-          <div>
-            <h3>Santa Cruz de Tenerife</h3>
-            <p>Consulta presencial en un espacio clínico acondicionado.</p>
-          </div>
-          <span class="location__type">Presencial</span>
+      <div class="format__modes">
+        <article class="mode reveal">
+          <span class="mode__index">A</span>
+          <h3>Santa Cruz</h3>
+          <p>Consulta presencial en Santa Cruz de Tenerife.</p>
+          <span class="mode__meta">Presencial</span>
         </article>
-        <article class="location reveal">
-          <span class="location__number">02</span>
-          <div>
-            <h3>San Isidro</h3>
-            <p>Consulta presencial para la zona sur de Tenerife.</p>
-          </div>
-          <span class="location__type">Presencial</span>
+        <article class="mode reveal">
+          <span class="mode__index">B</span>
+          <h3>San Isidro</h3>
+          <p>Consulta presencial en San Isidro, Granadilla de Abona.</p>
+          <span class="mode__meta">Presencial · Zona sur</span>
         </article>
-        <article class="location reveal">
-          <span class="location__number">03</span>
-          <div>
-            <h3>Desde donde estés</h3>
-            <p>Terapia online y atención domiciliaria bajo consulta de disponibilidad.</p>
-          </div>
-          <span class="location__type">Online</span>
+        <article class="mode reveal">
+          <span class="mode__index">C</span>
+          <h3>Online</h3>
+          <p>Sesiones online para cuando la distancia o la agenda piden otra forma de encontrarnos.</p>
+          <span class="mode__meta">Videoconsulta</span>
         </article>
       </div>
+      <p class="format__note reveal">También se ofrece atención domiciliaria bajo consulta de disponibilidad.</p>
     </section>
 
     <section class="cta" id="cita" aria-labelledby="cta-title">
-      <div class="cta__micro reveal">Si has llegado hasta aquí, quizá ya llevabas un tiempo pensándolo.</div>
-      <h2 id="cta-title" class="display display--cta reveal">Podemos empezar<br><em>por hablar.</em></h2>
-      <div class="cta__actions reveal">
-        <a class="cta__primary" href="https://wa.me/34668558471?text=Hola%20Cynthia%2C%20me%20gustar%C3%ADa%20pedir%20informaci%C3%B3n%20para%20una%20primera%20sesi%C3%B3n." target="_blank" rel="noopener noreferrer">
-          <span>Pedir una primera sesión</span>
-          <span aria-hidden="true">↗</span>
-        </a>
-        <a class="cta__secondary" href="tel:+34668558471">668 55 84 71</a>
-        <a class="cta__secondary" href="mailto:cynthiamonteropsico@gmail.com">cynthiamonteropsico@gmail.com</a>
+      <div class="cta__noise" aria-hidden="true"></div>
+      <div class="cta__top reveal">
+        <span class="label">04 / Primera sesión</span>
+        <span>Quizá no tengas claro por dónde empezar.<br>No pasa nada.</span>
       </div>
-      <p class="cta__availability reveal">Presencial en Santa Cruz y San Isidro · Online · Atención domiciliaria bajo disponibilidad</p>
+      <h2 id="cta-title" class="reveal">Podemos empezar<br><em>por hablar.</em></h2>
+      <div class="cta__actions reveal">
+        <a class="cta__main magnetic" href="https://wa.me/34668558471?text=Hola%20Cynthia,%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20para%20una%20primera%20sesi%C3%B3n." target="_blank" rel="noopener noreferrer">
+          <span>Pedir una primera sesión por WhatsApp</span><span aria-hidden="true">↗</span>
+        </a>
+        <a href="tel:+34668558471"><span>668 55 84 71</span><span>Llamar</span></a>
+        <a href="mailto:cynthiamonteropsico@gmail.com"><span>cynthiamonteropsico@gmail.com</span><span>Escribir</span></a>
+      </div>
+      <p class="cta__note reveal">Si escribes y estoy en sesión, te responderé cuando termine. La consulta inicial no te obliga a iniciar un proceso.</p>
     </section>
   </main>
 
-  <footer class="finale">
-    <div class="finale__brand">
-      <p>Cynthia Montero</p>
-      <span>Psicología sanitaria</span>
+  <footer class="footer">
+    <div class="footer__brand"><span>Cynthia</span><span>Montero</span></div>
+    <div class="footer__details">
+      <p>Psicología General Sanitaria · T-04139</p>
+      <p>Santa Cruz · San Isidro · Online</p>
     </div>
-    <div class="finale__meta">
-      <p>T-04139 · Tenerife</p>
-      <p>© <span data-year></span></p>
+    <div class="footer__legal">
+      <button type="button" data-dialog-open="aviso-legal">Aviso legal</button>
+      <button type="button" data-dialog-open="privacidad">Privacidad</button>
+      <span>© 2026</span>
     </div>
-    <nav class="finale__legal" aria-label="Información legal">
-      <button type="button" data-dialog-open="legal-dialog">Aviso legal</button>
-      <button type="button" data-dialog-open="privacy-dialog">Privacidad</button>
-    </nav>
   </footer>
 
-  <dialog class="legal-dialog" id="legal-dialog" aria-labelledby="legal-title">
-    <div class="legal-dialog__top">
-      <h2 id="legal-title">Aviso legal</h2>
-      <button type="button" class="legal-dialog__close" data-dialog-close aria-label="Cerrar aviso legal">Cerrar</button>
-    </div>
-    <div class="legal-dialog__body">
-      <p>En cumplimiento del artículo 10 de la Ley 34/2002, de Servicios de la Sociedad de la Información y Comercio Electrónico (LSSI-CE), se facilitan los datos identificativos del titular de este sitio web.</p>
-      <p><strong>Titular:</strong> Cynthia Montero.<br><strong>Actividad:</strong> Psicóloga Sanitaria, colegiada nº T-04139 por el Colegio Oficial de Psicología de Santa Cruz de Tenerife.<br><strong>Contacto:</strong> cynthiamonteropsico@gmail.com · 668 55 84 71.</p>
-      <p>El contenido de la web tiene carácter informativo sobre los servicios profesionales ofrecidos.</p>
+  <dialog class="legal" id="aviso-legal">
+    <div class="legal__head"><h2>Aviso legal</h2><button type="button" data-dialog-close>Cerrar</button></div>
+    <div class="legal__body">
+      <p>En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y Comercio Electrónico (LSSI-CE), se exponen los siguientes datos identificativos del titular del sitio web:</p>
+      <ul>
+        <li><strong>Titular:</strong> Cynthia Montero</li>
+        <li><strong>Actividad:</strong> Psicóloga Sanitaria, colegiada Nº T-04139 por el Colegio Oficial de Psicología de Santa Cruz de Tenerife.</li>
+        <li><strong>Contacto:</strong> cynthiamonteropsico@gmail.com · 668 55 84 71</li>
+      </ul>
+      <p>El acceso y uso de este sitio web atribuye la condición de usuario. El contenido tiene carácter informativo sobre los servicios profesionales ofrecidos.</p>
     </div>
   </dialog>
 
-  <dialog class="legal-dialog" id="privacy-dialog" aria-labelledby="privacy-title">
-    <div class="legal-dialog__top">
-      <h2 id="privacy-title">Política de privacidad</h2>
-      <button type="button" class="legal-dialog__close" data-dialog-close aria-label="Cerrar política de privacidad">Cerrar</button>
-    </div>
-    <div class="legal-dialog__body">
-      <p>De conformidad con el Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD), Cynthia Montero es responsable del tratamiento de los datos personales facilitados voluntariamente a través de los canales de contacto.</p>
-      <p><strong>Finalidad:</strong> gestionar y responder solicitudes de información o cita previa. <strong>Legitimación:</strong> consentimiento del usuario al iniciar el contacto.</p>
-      <p>Los datos se tratarán con confidencialidad y no se cederán a terceros salvo obligación legal. Puedes ejercer tus derechos de acceso, rectificación, supresión y limitación escribiendo a cynthiamonteropsico@gmail.com.</p>
+  <dialog class="legal" id="privacidad">
+    <div class="legal__head"><h2>Política de privacidad</h2><button type="button" data-dialog-close>Cerrar</button></div>
+    <div class="legal__body">
+      <p>De conformidad con el Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD), se informa sobre el tratamiento de los datos personales facilitados mediante los canales de contacto de esta web.</p>
+      <p><strong>Responsable:</strong> Cynthia Montero.</p>
+      <p><strong>Finalidad:</strong> Gestionar y responder solicitudes de información o cita previa.</p>
+      <p><strong>Legitimación:</strong> Consentimiento del usuario al contactar voluntariamente.</p>
+      <p><strong>Confidencialidad:</strong> Los datos serán tratados de forma confidencial y no se cederán a terceros salvo obligación legal.</p>
+      <p><strong>Derechos:</strong> Puedes ejercer tus derechos de acceso, rectificación, supresión y limitación escribiendo a cynthiamonteropsico@gmail.com.</p>
     </div>
   </dialog>
 
