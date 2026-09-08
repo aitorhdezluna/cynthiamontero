@@ -190,3 +190,17 @@ footer{background:var(--paper-2);padding:34px 0}
   *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}
   .reveal{opacity:1;transform:none}
 }
+
+/* Primera sesión — nueva sección solicitada */
+.first-session{background:#e9eee9;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.first-session-layout{display:grid;grid-template-columns:.72fr 1.28fr;gap:8vw;align-items:start}
+.first-session-heading h2{max-width:9ch}
+.first-session-content{max-width:760px}
+.first-session-intro{font-size:1.08rem;color:var(--ink);max-width:650px;margin-bottom:42px}
+.session-steps{list-style:none;padding:0;margin:0;border-top:1px solid rgba(52,68,58,.24)}
+.session-step{display:grid;grid-template-columns:48px 1fr;gap:18px;align-items:center;padding:21px 0;border-bottom:1px solid rgba(52,68,58,.24)}
+.session-step span{font-size:.67rem;letter-spacing:.1em;color:var(--olive)}
+.session-step strong{font-family:var(--serif);font-size:1.45rem;font-weight:400;letter-spacing:-.02em}
+@media (min-width:721px){.specialties-grid .specialty-card{min-height:430px}}
+@media (max-width:900px){.first-session-layout{grid-template-columns:1fr;gap:34px}.first-session-heading h2{max-width:11ch}}
+@media (max-width:720px){.first-session-intro{font-size:1rem}.session-step{grid-template-columns:38px 1fr;gap:12px}.session-step strong{font-size:1.25rem}}
