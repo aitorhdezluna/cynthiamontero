@@ -66,7 +66,9 @@ p{margin:0;color:var(--muted)}
 .therapeutic-space{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .intro-grid{display:grid;grid-template-columns:.35fr 1fr;gap:6vw}
 .intro-content{max-width:900px}
-.intro-text-large{font:400 clamp(2.5rem,4.7vw,4.8rem)/1.08 var(--serif);letter-spacing:-.035em;margin:0;color:var(--ink)}
+.intro-text-large {
+  font-size: clamp(1.8rem, 3vw, 3rem);
+}
 .intro-copy{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin:52px 0 0 18%}
 
 .section-heading{display:grid;grid-template-columns:1.15fr .65fr;gap:8vw;align-items:end;margin-bottom:56px}
