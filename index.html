@@ -7,18 +7,18 @@
   <meta name="description" content="Cynthia Montero, Psicóloga General Sanitaria en Santa Cruz de Tenerife y San Isidro. Psicoterapia individual, mediación familiar y terapia online. Nº Col. T-04139.">
   <meta name="theme-color" content="#F7F5F0">
   <meta name="robots" content="index,follow,max-image-preview:large">
-  <link rel="canonical" href="https://aitorhdezluna.github.io/cynthiamontero/">
+  <link rel="canonical" href="https://cynthiamontero.es/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_ES">
   <meta property="og:title" content="Cynthia Montero | Psicóloga General Sanitaria en Tenerife">
   <meta property="og:description" content="Psicóloga General Sanitaria en Santa Cruz de Tenerife y San Isidro. Psicoterapia individual, mediación familiar y terapia online.">
-  <meta property="og:url" content="https://aitorhdezluna.github.io/cynthiamontero/">
-  <meta property="og:image" content="https://aitorhdezluna.github.io/cynthiamontero/foto_hero.webp">
+  <meta property="og:url" content="https://cynthiamontero.es/">
+  <meta property="og:image" content="https://cynthiamontero.es/photos/foto-cynthia-principal.jpg">
   <meta property="og:image:alt" content="Cynthia Montero, psicóloga sanitaria">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Cynthia Montero | Psicóloga General Sanitaria en Tenerife">
   <meta name="twitter:description" content="Psicóloga General Sanitaria en Santa Cruz de Tenerife y San Isidro. Psicoterapia individual, mediación familiar y terapia online.">
-  <meta name="twitter:image" content="https://aitorhdezluna.github.io/cynthiamontero/foto_hero.webp">
+  <meta name="twitter:image" content="https://cynthiamontero.es/photos/foto-cynthia-principal.jpg">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="favicon.svg">
 
@@ -26,21 +26,65 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Estilos de refuerzo para las nuevas fotos y la estructura adaptativa */
+    .space-img-wrapper {
+      margin-top: 2.5rem;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .space-img-wrapper img {
+      width: 100%;
+      max-height: 480px;
+      object-fit: cover;
+      display: block;
+      border-radius: 8px;
+    }
+    .first-session-grid-3 {
+      display: grid;
+      grid-template-columns: 0.85fr 1fr 1.15fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .first-session-img-col figure {
+      margin: 0;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .first-session-img-col img {
+      width: 100%;
+      height: 100%;
+      max-height: 520px;
+      object-fit: cover;
+      display: block;
+      border-radius: 8px;
+    }
+    @media (max-width: 960px) {
+      .first-session-grid-3 {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .first-session-img-col img {
+        max-height: 380px;
+      }
+    }
+  </style>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "Person",
-        "@id": "https://aitorhdezluna.github.io/cynthiamontero/#person",
+        "@id": "https://cynthiamontero.es/#person",
         "name": "Cynthia Montero",
         "jobTitle": "Psicóloga General Sanitaria",
-        "url": "https://aitorhdezluna.github.io/cynthiamontero/",
-        "image": "https://aitorhdezluna.github.io/cynthiamontero/foto_sobre_mi.webp",
+        "url": "https://cynthiamontero.es/",
+        "image": "https://cynthiamontero.es/photos/foto-cynthia-sobre-mi.jpg",
         "telephone": "+34668558471",
         "email": "cynthiamonteropsico@gmail.com",
         "worksFor": {
-          "@id": "https://aitorhdezluna.github.io/cynthiamontero/#practice"
+          "@id": "https://cynthiamontero.es/#practice"
         },
         "knowsAbout": [
           "Psicoterapia individual",
@@ -56,14 +100,14 @@
       },
       {
         "@type": "ProfessionalService",
-        "@id": "https://aitorhdezluna.github.io/cynthiamontero/#practice",
+        "@id": "https://cynthiamontero.es/#practice",
         "name": "Cynthia Montero — Psicología General Sanitaria",
-        "url": "https://aitorhdezluna.github.io/cynthiamontero/",
-        "image": "https://aitorhdezluna.github.io/cynthiamontero/foto_hero.webp",
+        "url": "https://cynthiamontero.es/",
+        "image": "https://cynthiamontero.es/photos/foto-cynthia-principal.jpg",
         "telephone": "+34668558471",
         "email": "cynthiamonteropsico@gmail.com",
         "employee": {
-          "@id": "https://aitorhdezluna.github.io/cynthiamontero/#person"
+          "@id": "https://cynthiamontero.es/#person"
         },
         "areaServed": [
           {
@@ -109,12 +153,12 @@
       },
       {
         "@type": "WebSite",
-        "@id": "https://aitorhdezluna.github.io/cynthiamontero/#website",
-        "url": "https://aitorhdezluna.github.io/cynthiamontero/",
+        "@id": "https://cynthiamontero.es/#website",
+        "url": "https://cynthiamontero.es/",
         "name": "Cynthia Montero | Psicología General Sanitaria",
         "inLanguage": "es-ES",
         "publisher": {
-          "@id": "https://aitorhdezluna.github.io/cynthiamontero/#person"
+          "@id": "https://cynthiamontero.es/#person"
         }
       }
     ]
@@ -165,7 +209,7 @@
         </div>
 
         <figure class="hero-img-wrapper reveal">
-          <img src="https://raw.githubusercontent.com/aitorhdezluna/cynthiamontero/refs/heads/main/foto_hero.webp" alt="Cynthia Montero, psicóloga sanitaria" class="hero-img" fetchpriority="high">
+          <img src="/photos/foto-cynthia-principal.jpg" alt="Cynthia Montero, psicóloga sanitaria" class="hero-img" fetchpriority="high">
           <figcaption>Consulta psicológica · Tenerife</figcaption>
         </figure>
       </div>
@@ -182,6 +226,11 @@
             <p>Quizás estás atravesando un cambio, una pérdida, un malestar difícil de nombrar, o simplemente la necesidad de ser escuchada/o. Sea cual sea tu momento, aquí hay un lugar para ti.</p>
             <p>Trabajo desde un enfoque integrador, adaptando cada proceso a lo que necesitas y construyendo contigo un camino más habitable y saludable.</p>
           </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="space-img-wrapper reveal">
+          <img src="/photos/foto-cynthia-espacio.jpg" alt="Detalle del espacio de consulta terapéutica de Cynthia Montero" loading="lazy">
         </div>
       </div>
     </section>
@@ -229,7 +278,7 @@
     <section id="sobre-mi" class="about section-padding">
       <div class="container about-grid">
         <figure class="about-img-wrap reveal">
-          <img src="https://raw.githubusercontent.com/aitorhdezluna/cynthiamontero/refs/heads/main/foto_sobre_mi.webp" alt="Cynthia Montero en consulta" class="about-img" loading="lazy">
+          <img src="/photos/foto-cynthia-sobre-mi.jpg" alt="Cynthia Montero en consulta" class="about-img" loading="lazy">
           <figcaption>Psicóloga General Sanitaria · T-04139</figcaption>
         </figure>
 
@@ -265,19 +314,31 @@
     </section>
 
     <section class="first-session section-padding">
-      <div class="container first-session-layout">
-        <div class="first-session-heading reveal">
-          <div class="eyebrow">Primera sesión</div>
-          <h2>¿Qué puedes esperar de una primera sesión?</h2>
-        </div>
-        <div class="first-session-content">
-          <p class="first-session-intro reveal">La primera sesión es un espacio para conocernos, entender qué te ha llevado a consulta y valorar conjuntamente qué necesitas. No tienes que llegar con todo claro ni saber exactamente qué decir.</p>
-          <ol class="session-steps">
-            <li class="session-step reveal"><span>01.</span><strong>Nos conocemos</strong></li>
-            <li class="session-step reveal"><span>02.</span><strong>Hablamos de lo que te está ocurriendo</strong></li>
-            <li class="session-step reveal"><span>03.</span><strong>Valoramos qué necesitas</strong></li>
-            <li class="session-step reveal"><span>04.</span><strong>Decidimos juntas/os cómo continuar</strong></li>
-          </ol>
+      <div class="container">
+        <div class="first-session-grid-3">
+          <!-- Columna 1: Foto añadida -->
+          <div class="first-session-img-col reveal">
+            <figure>
+              <img src="/photos/foto-cynthia-sesion.jpg" alt="Cynthia Montero preparando una sesión de terapia" loading="lazy">
+            </figure>
+          </div>
+
+          <!-- Columna 2: Título e introducción -->
+          <div class="first-session-heading reveal">
+            <div class="eyebrow">Primera sesión</div>
+            <h2>¿Qué puedes esperar de una primera sesión?</h2>
+            <p class="first-session-intro" style="margin-top: 1.5rem;">La primera sesión es un espacio para conocernos, entender qué te ha llevado a consulta y valorar conjuntamente qué necesitas. No tienes que llegar con todo claro ni saber exactamente qué decir.</p>
+          </div>
+
+          <!-- Columna 3: Pasos ordenados -->
+          <div class="first-session-steps-col reveal">
+            <ol class="session-steps">
+              <li class="session-step"><span>01.</span><strong>Nos conocemos</strong></li>
+              <li class="session-step"><span>02.</span><strong>Hablamos de lo que te está ocurriendo</strong></li>
+              <li class="session-step"><span>03.</span><strong>Valoramos qué necesitas</strong></li>
+              <li class="session-step"><span>04.</span><strong>Decidimos juntas/os cómo continuar</strong></li>
+            </ol>
+          </div>
         </div>
       </div>
     </section>
