@@ -22,9 +22,9 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="favicon.svg">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,500&display=swap" rel="stylesheet">
+  <link rel="preload" href="fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="photos/foto-cynthia-principal.jpg" as="image" fetchpriority="high">
   <link rel="stylesheet" href="styles.css">
   <style>
     /* --- Estilos: Espacio Terapéutico --- */
@@ -128,7 +128,7 @@
         "name": "Cynthia Montero",
         "jobTitle": "Psicóloga General Sanitaria",
         "url": "https://cynthiamontero.es/",
-        "image": "https://cynthiamontero.es/photos/foto-cynthia-sobre-mi.jpg",
+        "image": "https://cynthiamontero.es/photos/foto-cynthia-sobre-mi.webp",
         "telephone": "+34668558471",
         "email": "cynthiamonteropsico@gmail.com",
         "worksFor": {
@@ -257,7 +257,7 @@
         </div>
 
         <figure class="hero-img-wrapper reveal">
-          <img src="photos/foto-cynthia-principal.jpg" alt="Cynthia Montero, psicóloga sanitaria" class="hero-img" fetchpriority="high">
+          <img src="photos/foto-cynthia-principal.jpg" alt="Cynthia Montero, psicóloga sanitaria" class="hero-img" width="1000" height="1378" fetchpriority="high">
           <figcaption>Consulta psicológica · Tenerife</figcaption>
         </figure>
       </div>
@@ -270,7 +270,7 @@
         <div class="therapeutic-space-top">
           <div class="eyebrow reveal">El espacio terapéutico</div>
           <figure class="space-hero-img-wrap reveal">
-            <img src="photos/foto-cynthia-espacio.jpg" alt="Cuaderno y detalle del espacio terapéutico de Cynthia Montero" loading="lazy">
+            <img src="photos/foto-cynthia-espacio.webp" alt="Cuaderno y detalle del espacio terapéutico de Cynthia Montero" width="1300" height="1972" loading="lazy">
           </figure>
         </div>
 
@@ -333,7 +333,7 @@
     <section id="sobre-mi" class="about section-padding">
       <div class="container about-grid">
         <figure class="about-img-wrap reveal">
-          <img src="photos/foto-cynthia-sobre-mi.jpg" alt="Cynthia Montero en consulta" class="about-img" loading="lazy">
+          <img src="photos/foto-cynthia-sobre-mi.webp" alt="Cynthia Montero en consulta" class="about-img" width="1000" height="1776" loading="lazy">
           <figcaption>Psicóloga General Sanitaria · T-04139</figcaption>
         </figure>
 
@@ -374,7 +374,7 @@
           <!-- Columna 1: Foto añadida -->
           <div class="first-session-img-col reveal">
             <figure>
-              <img src="photos/foto-cynthia-sesion.jpg" alt="Cynthia Montero preparando una sesión de terapia" loading="lazy">
+              <img src="photos/foto-cynthia-sesion.webp" alt="Cynthia Montero preparando una sesión de terapia" width="900" height="1599" loading="lazy">
             </figure>
           </div>
 
@@ -427,7 +427,7 @@
 
         <div class="contact-bottom reveal">
           <div class="contact-methods">
-            <a href="https://wa.me/34668558471?text=Hola%20Cynthia,%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20para%20una%20consulta." target="_blank" rel="noopener noreferrer" class="contact-primary">
+            <a href="https://wa.me/34668558471?text=Hola%20Cynthia,%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20para%20una%20consulta." target="_blank" rel="noopener noreferrer" class="contact-primary" data-conversion="whatsapp">
               Pedir cita por WhatsApp <span aria-hidden="true">↗</span>
             </a>
             <div class="contact-secondary">
@@ -451,6 +451,8 @@
         <div class="footer-legal-links">
           <a href="#aviso-legal">Aviso Legal</a>
           <a href="#politica-privacidad">Política de Privacidad</a>
+          <a href="#politica-cookies">Política de Cookies</a>
+          <button type="button" data-cookie-settings hidden>Configurar cookies</button>
         </div>
       </div>
     </div>
@@ -460,13 +462,19 @@
     <div class="legal-modal-content">
       <a href="#" class="close-modal" aria-label="Cerrar aviso legal">&times;</a>
       <h3>Aviso Legal</h3>
-      <p>En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y Comercio Electrónico (LSSI-CE), se exponen los siguientes datos identificativos del titular del sitio web:</p>
+      <p>En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), se exponen los datos identificativos del titular de este sitio web:</p>
       <ul>
-        <li><strong>Titular:</strong> Cynthia Montero</li>
-        <li><strong>Actividad:</strong> Psicóloga Sanitaria (Colegiada Nº T-04139 por el Colegio Oficial de Psicología de Santa Cruz de Tenerife).</li>
+        <li><strong>Titular:</strong> Cynthia Paola Montero Rivera</li>
+        <li><strong>NIF:</strong> 79157836R</li>
+        <li><strong>Domicilio profesional:</strong> Calle de Fernández Navarro, 33, 38003 Santa Cruz de Tenerife</li>
         <li><strong>Contacto:</strong> cynthiamonteropsico@gmail.com | Tel. 668 55 84 71</li>
+        <li><strong>Dominio:</strong> cynthiamontero.es</li>
       </ul>
-      <p>El acceso y uso de este sitio web atribuye la condición de usuario. El contenido de la web tiene carácter meramente informativo sobre los servicios profesionales de psicología ofrecidos.</p>
+      <p><strong>Datos profesionales.</strong> Psicóloga General Sanitaria, colegiada nº T-04139 en el Colegio Oficial de Psicología de Santa Cruz de Tenerife. Titulación: Grado en Psicología (Universidad de La Laguna) y Máster en Psicología General Sanitaria (Universidad Europea), títulos expedidos en España. La actividad se rige por la Ley 44/2003, de ordenación de las profesiones sanitarias, la Ley 33/2011, General de Salud Pública, y el Código Deontológico del Psicólogo.</p>
+      <p><strong>Condiciones de uso.</strong> El acceso y uso de este sitio web atribuye la condición de usuario e implica la aceptación de este aviso. El contenido tiene carácter meramente informativo sobre los servicios profesionales ofrecidos y no sustituye a una valoración, diagnóstico o tratamiento psicológico individualizado. Si estás en una situación de urgencia o riesgo, llama al 112; si tienes pensamientos de suicidio, puedes llamar al 024.</p>
+      <p><strong>Propiedad intelectual.</strong> Los textos, imágenes, diseño y demás contenidos de este sitio pertenecen a su titular o se usan con autorización, y no pueden reproducirse, distribuirse ni transformarse sin su permiso expreso.</p>
+      <p><strong>Responsabilidad y enlaces.</strong> El titular no se responsabiliza de los contenidos de sitios de terceros a los que se enlaza (como Google Maps o WhatsApp) ni de posibles interrupciones técnicas del servicio.</p>
+      <p><strong>Legislación aplicable.</strong> Este aviso se rige por la legislación española. Para cualquier controversia serán competentes los juzgados y tribunales que correspondan conforme a la normativa aplicable, incluida la de protección de consumidores y usuarios.</p>
     </div>
   </div>
 
@@ -474,16 +482,43 @@
     <div class="legal-modal-content">
       <a href="#" class="close-modal" aria-label="Cerrar política de privacidad">&times;</a>
       <h3>Política de Privacidad</h3>
-      <p>De conformidad con el Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD), se informa al usuario de cómo se tratan los datos personales facilitados a través de esta web:</p>
-      <p><strong>Responsable del Tratamiento:</strong> Cynthia Montero.</p>
-      <p><strong>Finalidad:</strong> Gestión y respuesta a las solicitudes de información, contacto o cita previa.</p>
-      <p><strong>Legitimación:</strong> El consentimiento del usuario al ponerse en contacto de forma voluntaria.</p>
-      <p><strong>Almacenamiento:</strong> Los datos se tratarán con confidencialidad y no se cederán a terceros salvo obligación legal.</p>
-      <p><strong>Derechos:</strong> El usuario puede ejercer sus derechos escribiendo a cynthiamonteropsico@gmail.com.</p>
+      <p>De conformidad con el Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD), se informa de cómo se tratan los datos personales facilitados a través de esta web.</p>
+      <p><strong>Responsable del tratamiento:</strong> Cynthia Paola Montero Rivera, NIF 79157836R, con domicilio profesional en Calle de Fernández Navarro, 33, 38003 Santa Cruz de Tenerife. Contacto: cynthiamonteropsico@gmail.com.</p>
+      <p><strong>Finalidad:</strong> atender y gestionar tus solicitudes de información o de cita previa, recibidas por WhatsApp, teléfono o correo electrónico.</p>
+      <p><strong>Legitimación:</strong> tu consentimiento al contactar de forma voluntaria (art. 6.1.a RGPD) y la aplicación de medidas precontractuales a tu petición (art. 6.1.b RGPD). Te recomendamos no incluir datos de salud en tu primer mensaje: si decides facilitarlos, lo haces con tu consentimiento explícito (art. 9.2.a RGPD). Si eres menor de 14 años, la solicitud debe hacerla tu madre, padre o tutor legal.</p>
+      <p><strong>Destinatarios:</strong> no se ceden datos a terceros salvo obligación legal. Para comunicarnos utilizamos proveedores que actúan como encargados del tratamiento: WhatsApp (Meta), Google (correo electrónico) y GitHub (alojamiento de la web, que puede tratar datos técnicos como la dirección IP para servir y proteger el sitio). Algunos de estos proveedores pueden estar ubicados fuera del Espacio Económico Europeo, con las garantías previstas en el RGPD.</p>
+      <p><strong>Conservación:</strong> los datos se conservan mientras sea necesario para gestionar tu solicitud y, después, debidamente bloqueados durante los plazos de prescripción legal. Si se inicia una relación asistencial, los datos clínicos se tratarán conforme a la normativa sanitaria aplicable y se te informará por separado en la primera sesión.</p>
+      <p><strong>Derechos:</strong> puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad, así como retirar tu consentimiento, escribiendo a cynthiamonteropsico@gmail.com. Si consideras que tus datos no se tratan correctamente, puedes reclamar ante la Agencia Española de Protección de Datos (www.aepd.es).</p>
+      <p><strong>Cookies:</strong> consulta la <a href="#politica-cookies">Política de Cookies</a>.</p>
     </div>
   </div>
 
-  <a href="https://wa.me/34668558471?text=Hola%20Cynthia,%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20para%20una%20consulta." class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+  <div id="politica-cookies" class="legal-modal">
+    <div class="legal-modal-content">
+      <a href="#" class="close-modal" aria-label="Cerrar política de cookies">&times;</a>
+      <h3>Política de Cookies</h3>
+      <p>En cumplimiento del artículo 22.2 de la LSSI-CE, te informamos de qué cookies puede utilizar este sitio web.</p>
+      <p><strong>Cookies técnicas.</strong> Esta web no instala cookies técnicas ni de sesión. Solo guarda en tu navegador (almacenamiento local) tu elección sobre las cookies, para no volver a preguntarte durante un máximo de 24 meses.</p>
+      <p><strong>Cookies de medición de publicidad (Google Ads).</strong> Solo se instalan si las aceptas. Su única finalidad es saber cuántas personas que llegan desde nuestros anuncios nos contactan por WhatsApp. No se usan para personalizar anuncios ni para crear audiencias.</p>
+      <ul>
+        <li><strong>Titular:</strong> Google Ireland Limited.</li>
+        <li><strong>Cookies habituales:</strong> _gcl_au y _gcl_aw (hasta 90 días) y, en su caso, _gac_* y otras cookies de google.com o doubleclick.net.</li>
+      </ul>
+      <p><strong>Cómo gestionar tu consentimiento.</strong> Puedes aceptar o rechazar estas cookies en el aviso que aparece al entrar y cambiar tu decisión en cualquier momento con el enlace «Configurar cookies» del pie de página. También puedes borrarlas desde los ajustes de tu navegador.</p>
+      <p><strong>Más información.</strong> Política de privacidad de Google: policies.google.com/privacy.</p>
+    </div>
+  </div>
+
+  <div class="cookie-banner" data-cookie-banner role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-desc" hidden>
+    <strong id="cookie-title">Cookies</strong>
+    <p id="cookie-desc">Utilizamos cookies de Google Ads solo para medir cuántos contactos por WhatsApp generan nuestros anuncios. Únicamente se activan si las aceptas. Más información en la <a href="#politica-cookies">Política de Cookies</a>.</p>
+    <div class="cookie-actions">
+      <button type="button" class="cookie-btn" data-cookie-reject>Rechazar</button>
+      <button type="button" class="cookie-btn" data-cookie-accept>Aceptar</button>
+    </div>
+  </div>
+
+  <a href="https://wa.me/34668558471?text=Hola%20Cynthia,%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20para%20una%20consulta." class="whatsapp-float" target="_blank" rel="noopener noreferrer" data-conversion="whatsapp">
     <span class="whatsapp-icon" aria-hidden="true"></span>
     <span>Primera sesión</span>
   </a>

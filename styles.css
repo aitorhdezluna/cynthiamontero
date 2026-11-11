@@ -1,3 +1,7 @@
+/* Fuentes autoalojadas (sin peticiones a Google Fonts) */
+@font-face{font-family:"Fraunces";font-style:normal;font-weight:100 900;font-display:swap;src:url(fonts/fraunces-latin.woff2) format("woff2-variations"),url(fonts/fraunces-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"DM Sans";font-style:normal;font-weight:100 1000;font-display:swap;src:url(fonts/dm-sans-latin.woff2) format("woff2-variations"),url(fonts/dm-sans-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
 :root{
   --paper:#f7f5f0;
   --paper-2:#fffdfa;
@@ -233,3 +237,14 @@ h1{font-size:clamp(3.2rem,5.8vw,5.7rem)}
 .location-card-dark:hover{
   color:inherit;
 }
+
+/* Aviso de cookies (Aceptar y Rechazar al mismo nivel) */
+.footer-legal-links button{background:none;border:0;padding:0;font:inherit;color:inherit;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.cookie-banner{position:fixed;left:24px;bottom:24px;z-index:1000;width:min(calc(100% - 28px),400px);background:var(--paper-2);border:1px solid var(--line);padding:22px;box-shadow:0 10px 30px rgba(0,0,0,.08)}
+.cookie-banner strong{display:block;font:400 1.3rem var(--serif);letter-spacing:-.02em;margin-bottom:8px}
+.cookie-banner p{margin:0;font-size:.85rem;line-height:1.55;color:var(--muted)}
+.cookie-banner p a{text-decoration:underline;text-underline-offset:3px;color:var(--ink)}
+.cookie-actions{display:flex;gap:10px;margin-top:16px}
+.cookie-btn{flex:1;cursor:pointer;font:inherit;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);background:transparent;border:1px solid var(--olive);padding:11px 14px;transition:background .25s,color .25s}
+.cookie-btn:hover{background:var(--olive);color:#fff}
+@media (max-width:720px){.cookie-banner{left:14px;bottom:14px;padding:18px}}
